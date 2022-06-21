@@ -30,12 +30,11 @@
 }
 .navbar-tabs {
     display: flex;
-    gap: 5px;
 }
 .navbar-tab {
     font-size: 18px;
     font-weight: 600;
-    padding: 10px 12px;
+    padding: 10px 18px;
     border-radius: var(--border-radius-primary);
     cursor: pointer;
     transition: color .2s;
