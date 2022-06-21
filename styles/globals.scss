@@ -1,9 +1,31 @@
+:root {
+  --color-primary: #02203c;
+  --color-secondary: #02192E;
+  --color-tertiary: #021221;
+  --background-primary: #fff;
+  --background-secondary: #ECECEC;
+  --background-tertiary: #E0E0E0;
+  --background-quaternary: #B7B7B7;
+  --button-background-primary: #021221;
+  --button-background-primary-hover: #021425;
+  --text-primary: #282828;
+  --text-secondary: #535353;
+  --text-light-primary: #fff;
+  --text-light-secondary: #9F9F9F;
+  --border-radius-primary: 10px;
+  --width-main: 1200px;
+  --width-main-max: 90%;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--color-primary);
+  color: var(--text-primary);
+  height: 200vh;
 }
 
 a {
