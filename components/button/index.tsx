@@ -14,8 +14,12 @@ export default function Button({ children, style, onClick, className='', type='d
         styles[type]
     ].join(' ');
     return(
-        <div className={className} style={style} onClick={onClick}>
+        <button 
+            className={className}
+            style={style} 
+            onClick={onClick}
+        >
             {children}
-        </div>
+        </button>
     )
 }
