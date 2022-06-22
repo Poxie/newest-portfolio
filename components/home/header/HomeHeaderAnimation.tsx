@@ -1,6 +1,6 @@
 import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
-import { HomeHeadeRAnimationBuilding } from './HomeHeaderAnimationBuilding';
+import { HomeHeaderAnimationBuilding } from './HomeHeaderAnimationBuilding';
 import { HomeHeaderAnimationCoding } from './HomeHeaderAnimationCoding';
 
 export const HomeHeaderAnimation = () => {
@@ -82,7 +82,7 @@ export const HomeHeaderAnimation = () => {
                 changeState={changeState}
                 active={state === 0}
             />
-            <HomeHeadeRAnimationBuilding 
+            <HomeHeaderAnimationBuilding 
                 changeState={changeState}
                 active={state === 1}
             />

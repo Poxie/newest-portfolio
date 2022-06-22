@@ -4,7 +4,7 @@ import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationPercentage } from './HomeHeaderAnimationPercentage';
 
 const ANIMATION_DURATION = 3500
-export const HomeHeadeRAnimationBuilding: React.FC<{
+export const HomeHeaderAnimationBuilding: React.FC<{
     active: boolean;
     changeState: () => void;
 }> = ({ active, changeState }) => {
