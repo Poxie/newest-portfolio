@@ -45,11 +45,11 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ title, text,
                     </h5>
                     <div className={styles['project-card-links']}>
                         {links.map(link => (
-                            <a href={link.path} target="_blank" key={link.path}>
+                            <a href={link.path} rel="noreferrer" target="_blank" key={link.path}>
                                 {link.icon}
                             </a>
                         ))}
-                        <a href={path} target="_blank">
+                        <a href={path} rel="noreferrer" target="_blank">
                             <ExternalLinkIcon />
                         </a>
                     </div>
