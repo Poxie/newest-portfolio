@@ -13,12 +13,14 @@
     left: 50%;
     z-index: 1414;
     transform: translateX(-50%);
+    transition: box-shadow .2s;
     // animation: navbar-in 1.6s ease;
 
     &.navbar-fixed {
         position: fixed;
         top: -100%;
         animation: navbar-in 1s ease forwards;
+        box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
     }
 }
 @keyframes navbar-in {
