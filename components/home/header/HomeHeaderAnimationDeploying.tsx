@@ -12,7 +12,7 @@ export const HomeHeaderAnimationDeploying: React.FC<{
     // Changing state on timer complete
     useEffect(() => {
         let timeout: NodeJS.Timeout;
-        if(active) timeout = setTimeout(changeState, ANIMATION_DURATION);
+        if(active) timeout = setTimeout(changeState, ANIMATION_DURATION + 300);
 
         return () => clearTimeout(timeout);
     }, [active]);

@@ -13,11 +13,11 @@ export const HomeHeaderAnimationPercentage: React.FC<{
 
         const interval = setInterval(() => {
             setDuration(prev => {
-                const newDuration = prev + 100;
+                const newDuration = prev + 50;
                 if(newDuration / totalDuration >= 1) clearInterval(interval);
                 return newDuration;
             });
-        }, 100);
+        }, 50);
         
         return () => clearInterval(interval);
     }, [totalDuration]);

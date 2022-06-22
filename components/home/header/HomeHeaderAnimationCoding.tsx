@@ -55,7 +55,7 @@ export const HomeHeaderAnimationCoding: React.FC<{
 
             // Making sure not to change state if animation is cancelled
             if(!cancel) {
-                changeState();
+                setTimeout(changeState, 300);
             }
         }
         displayCode();

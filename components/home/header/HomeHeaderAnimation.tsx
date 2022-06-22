@@ -56,8 +56,8 @@ export const HomeHeaderAnimation = () => {
             const mousePos = {x: e.clientX, y: e.clientY};
             const containerPos = containerRef.current.getBoundingClientRect();
 
-            const rotateY = -((containerPos.x + containerPos.width / 2) - mousePos.x) / 50;
-            const rotateX = ((containerPos.y + containerPos.height / 2) - mousePos.y) / 20;
+            const rotateY = -((containerPos.x + containerPos.width / 2) - mousePos.x) / 70;
+            const rotateX = ((containerPos.y + containerPos.height / 2) - mousePos.y) / 40;
 
             setRotateX(rotateX);
             setRotateY(rotateY);

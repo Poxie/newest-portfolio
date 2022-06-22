@@ -20,7 +20,7 @@ export const HomeHeaderAnimationBuilding: React.FC<{
 
         // After animation is done, update animation state
         let timeout: NodeJS.Timeout;
-        if(active) timeout = setTimeout(changeState, ANIMATION_DURATION);
+        if(active) timeout = setTimeout(changeState, ANIMATION_DURATION + 300);
 
         return () => clearTimeout(timeout);
     }, [active, changeState]);
