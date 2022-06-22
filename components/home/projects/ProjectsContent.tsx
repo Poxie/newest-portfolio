@@ -14,7 +14,7 @@ export type CardType = typeof cards[0];
 export const ProjectsContent = () => {
     return(
         <div className={styles['project-cards']}>
-            {cards.map(card => <ProjectCard {...card} key={card.title} />)}
+            {cards.map((card, key) => <ProjectCard {...card} index={key} key={card.title} />)}
         </div>
     )
 }
