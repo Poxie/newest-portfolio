@@ -464,12 +464,104 @@
     h4 {
         margin-top: 0;
         margin-bottom: 12px;
-        font-size: 23px;
+        font-size: 28px;
         animation: header-fade-in 1s forwards;
     }
     p {
         animation: header-fade-in 1s forwards;
         animation-delay: .3s;
         opacity: 0;
+    }
+}
+
+.projects {
+    &>svg {
+        width: 100%;
+        margin-top: -250px;
+        pointer-events: none;
+    }
+}
+.projects-container {
+    max-width: var(--width-main-max);
+    width: var(--width-main);
+    margin: 0 auto;
+    color: var(--text-light-secondary);
+}
+.projects-header {
+    font-size: 50px;
+    margin-bottom: 25px;
+    margin-top: 0;
+    color: var(--text-light-primary);
+}
+.project-cards {
+    --row-amount: 3;
+
+    display: grid;
+    grid-template-columns: repeat(var(--row-amount), 1fr);
+    gap: 20px;
+}
+.project-card {
+    background-color: var(--color-secondary);
+    border-radius: var(--border-radius-primary);
+    padding: 25px;
+    transition: background-color .2s, transform .2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 600;
+
+    &:hover {
+        background-color: var(--color-tertiary);
+        transform: translateY(-5px);
+    }
+}
+.project-card-header {
+    color: var(--text-light-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    h5 {
+        font-size: 22px;
+        margin: 0;
+        font-weight: 600;
+    }
+}
+.project-card-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--text-light-secondary);
+        display: block;
+        transition: fill .3s;
+
+        &:hover {
+            fill: var(--text-light-primary);
+        }
+    }
+}
+.project-card-description {
+    font-size: 14px;
+    margin-top: 20px;
+    display: block;
+}
+.project-card-tech {
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .project-cards {
+        --row-amount: 2;
+    }
+}
+@media (max-width: 600px) {
+    .project-cards {
+        --row-amount: 1;
     }
 }
