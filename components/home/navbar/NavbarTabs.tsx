@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { NavbarTab } from './NavbarTab';
 
-const SPACE_FROM_TOP = 200;
+const SPACE_FROM_TOP = 500;
 const tabs = ['Home', 'About', 'Projects', 'Knowledge'];
 export const NavbarTabs = () => {
     const [activeTab, setActiveTab] = useState(tabs[0]);
