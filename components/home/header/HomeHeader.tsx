@@ -6,7 +6,7 @@ import { HomeHeaderText } from './HomeHeaderText';
 
 export const HomeHeader = () => {
     return(
-        <div className={styles['header']}>
+        <div className={styles['header']} data-section={'home'}>
             <div className={styles['header-content']}>
                 <HomeHeaderText />
                 <HomeHeaderAnimation />

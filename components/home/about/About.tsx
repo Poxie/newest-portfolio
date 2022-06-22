@@ -6,7 +6,7 @@ import { AboutHeader } from './AboutHeader';
 
 export const About = () => {
     return(
-        <div className={styles['about']}>
+        <div className={styles['about']} data-section={'about'}>
             <div className={styles['about-container']}>
                 <AboutHeader />
                 <AboutContent />

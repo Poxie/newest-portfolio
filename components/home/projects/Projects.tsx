@@ -6,7 +6,7 @@ import { ProjectsHeader } from './ProjectsHeader';
 
 export const Projects = () => {
     return(
-        <div className={styles['projects']}>
+        <div className={styles['projects']} data-section={'projects'}>
             <div className={styles['projects-container']}>
                 <ProjectsHeader />
                 <ProjectsContent />
