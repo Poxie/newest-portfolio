@@ -2,6 +2,7 @@ import React, { RefObject, useCallback, useEffect, useRef, useState } from 'reac
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationBuilding } from './HomeHeaderAnimationBuilding';
 import { HomeHeaderAnimationCoding } from './HomeHeaderAnimationCoding';
+import { HomeHeaderAnimationDeploying } from './HomeHeaderAnimationDeploying';
 
 export const HomeHeaderAnimation = () => {
     const [state, setState] = useState(0);
@@ -15,7 +16,7 @@ export const HomeHeaderAnimation = () => {
     const showNewState = () => {
         setState(prev => {
             let newState = prev + 1;
-            if(newState > 1) newState = 0;
+            if(newState > 2) newState = 0;
             return newState;
         });
         setGlobalRotateY(-90);
@@ -85,6 +86,10 @@ export const HomeHeaderAnimation = () => {
             <HomeHeaderAnimationBuilding 
                 changeState={changeState}
                 active={state === 1}
+            />
+            <HomeHeaderAnimationDeploying
+                changeState={changeState} 
+                active={state === 2}
             />
         </div>
     )

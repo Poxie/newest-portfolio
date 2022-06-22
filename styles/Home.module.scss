@@ -286,3 +286,103 @@
     margin-top: 12px;
     font-size: 14px;
 }
+
+.animation-deploying {
+    .animation-interface {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    &.active {
+        .animation-upload-icon-container {
+            animation: upload-animation 2s infinite alternate linear;
+            animation-delay: 1s;
+        }
+        .animation-upload-icon {
+            animation: upload-arrow-in .5s forwards;
+
+            svg {
+                animation: start-upload 1s forwards;
+                animation-delay: .4s;
+            }
+        }
+        .animation-air {
+            animation: air-animation .8s forwards infinite;
+            animation-delay: var(--animation-delay);
+        }
+    }
+}
+.animation-upload-icon {
+    background-color: var(--color-tertiary);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 50px;
+        fill: var(--text-light-primary);
+        display: block;
+        transform: rotate(-90deg);
+    }
+}
+.animation-air-container {
+    position: absolute;
+    display: flex;
+    gap: 50px;
+    height: 100%;
+}
+.animation-air {
+    height: 100px;
+    width: 2px;
+    background-color: var(--text-light-secondary);
+    border-radius: 120px;
+    transform: translateY(-100%);
+}
+@keyframes air-animation {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(300px);
+    }
+}
+@keyframes upload-arrow-in {
+    from {
+        opacity: 0;
+        transform: scale(.2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes start-upload {
+    10% {
+        transform: scale(1) rotate(-90deg);
+    }
+    40%, 45% {
+        transform: scaleY(.6) rotate(-90deg);
+    }
+    70%, 100% {
+        transform: scaleY(1.4) rotate(-90deg);
+    }
+}
+@keyframes upload-animation {
+    0% {
+        transform: rotate(0deg) translateX(0);
+    }
+    50% {
+        transform: rotate(10deg) translateX(15px);
+    }
+    75% {
+        transform: rotate(0deg) translateX(0) translateY(-5px);
+    }
+    100% {
+        transform: rotate(-7deg) translateX(-15px);
+    }
+}
