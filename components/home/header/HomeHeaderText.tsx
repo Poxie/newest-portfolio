@@ -19,7 +19,7 @@ export const HomeHeaderText = () => {
                 I create stuff sometimes.
             </h2>
             <p style={{ "--animation-delay": '1800ms' } as CSSProperties}>
-                I am software engineer with great interest in full stack development. I specialize in frontend, but greatly enjoy backend development as well.
+                I am a software engineer with great interest in full stack development. I specialize in frontend, but greatly enjoy backend development as well.
             </p>
             <Button 
                 type={'hollow'} 

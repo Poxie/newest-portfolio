@@ -43,7 +43,7 @@ export const HomeHeaderAnimationBuilding: React.FC<{
                     I create stuff sometimes.
                 </div>
                 <div className={styles['animation-text']} style={{ '--animation-delay': '1600ms' } as CSSProperties} ref={refs.current[2]}>
-                    I am software engineer with great interest in full stack development. I specialize in frontend, but greatly enjoy backend development as well.
+                    I am a software engineer with great interest in full stack development. I specialize in frontend, but greatly enjoy backend development as well.
                 </div>
                 <div className={styles['animation-button']} style={{ '--animation-delay': '2000ms' } as CSSProperties} ref={refs.current[3]}>
                     More about me
