@@ -1,22 +1,23 @@
 .navbar {
     display: flex;
     justify-content: center;
-    position: absolute;
+    // position: absolute;
+    position: fixed;
     width: 100%;
     top: 50px;
     left: 0;
     z-index: 1414;
     // animation: navbar-in 1.6s ease;
 
-    &.navbar-fixed {
-        position: fixed;
-        top: -100%;
-        animation: navbar-in 1s ease forwards;
+    // &.navbar-fixed {
+    //     position: fixed;
+    //     top: -100%;
+    //     animation: navbar-in 1s ease forwards;
         
-        .navbar-content {
-            box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
-        }
-    }
+    //     .navbar-content {
+    //         box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
+    //     }
+    // }
 }
 .navbar-content {
     display: flex;
@@ -29,6 +30,7 @@
     border-radius: 120px;
     padding: 15px 25px;
     transition: box-shadow .2s;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
 }
 @keyframes navbar-in {
     from {
@@ -671,6 +673,9 @@
         left: -20px;
         bottom: -20px;
     }
+    .navbar {
+        top: 20px;
+    }
     .navbar-tab-container {
         position: fixed;
         left: 100%;
@@ -714,6 +719,9 @@
     }
     .ham {
         display: block;
+    }
+    .header-content {
+        padding-top: 140px;
     }
 }
 @media (max-width: 500px) {
