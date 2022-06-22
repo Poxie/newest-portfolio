@@ -36,8 +36,10 @@ export const Navbar = () => {
     ].join(' ');
     return(
         <div className={className}>
-            <NavbarTabs />
-            <NavbarButtons />
+            <div className={styles['navbar-content']}>
+                <NavbarTabs />
+                <NavbarButtons />
+            </div>
         </div>
     )
 }

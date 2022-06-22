@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
+import { HamIcon } from '../../../icons/HamIcon';
 import styles from '../../../styles/Home.module.scss';
 import { NavbarTab } from './NavbarTab';
 
@@ -6,6 +7,10 @@ const SPACE_FROM_TOP = 500;
 export const NavbarTabs = () => {
     const [tabs, setTabs] = useState<string[]>([]);
     const [activeTab, setActiveTab] = useState(tabs[0]);
+    const [mobileVisible, setMobileVisible] = useState(false);
+
+    // Closing mobile
+    const closeMobile = useCallback(() => setMobileVisible(false), [setMobileVisible]);
 
     useEffect(() => {
         // Fetching tabs based on data attributes
@@ -38,17 +43,27 @@ export const NavbarTabs = () => {
         return () => window.removeEventListener('scroll', scroll);
     }, []);
 
+    const className = [
+        styles['navbar-tab-container'],
+        mobileVisible ? styles['mobile-visible'] : ''
+    ].join(' ');
     return(
         <div className={styles['navbar-tabs']}>
-            {tabs.map((tab, key) => (
-                <NavbarTab 
-                    text={tab} 
-                    id={tab.toLowerCase()}
-                    // Hard-coded for now
-                    active={tab === activeTab}
-                    key={tab.toLowerCase()} 
-                />
-            ))}
+            <button className={styles['ham']} onClick={() => setMobileVisible(!mobileVisible)}>
+                <HamIcon />
+            </button>
+
+            <div className={className}>
+                {tabs.map((tab, key) => (
+                    <NavbarTab 
+                        text={tab} 
+                        id={tab.toLowerCase()}
+                        active={tab === activeTab}
+                        key={tab.toLowerCase()} 
+                        onClick={closeMobile}
+                    />
+                ))}
+            </div>
         </div>
     )
 }

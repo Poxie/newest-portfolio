@@ -6,11 +6,13 @@ export const NavbarTab: React.FC<{
     text: string;
     id: string;
     active: boolean;
-}> = ({ text, id, active }) => {
+    onClick: () => void;
+}> = ({ text, id, active, onClick }) => {
     const scroll = () => {
         const section = document.querySelector(`[data-section="${id}"]`);
         const top = (section?.getBoundingClientRect().top || 0) + window.scrollY - SPACE_FROM_TOP;
         window.scrollTo({ top });
+        onClick();
     }
 
     const className = [
