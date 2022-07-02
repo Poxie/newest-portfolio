@@ -449,9 +449,11 @@
 }
 .about-tabs {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .about-tab {
-    padding: 8px 14px;
+    padding: 9px 12px;
     margin-left: -14px;
     margin-right: 20px;
     margin-bottom: 8px;
@@ -461,6 +463,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-secondary);
+    font-size: 15px;
 
     &:hover {
         background-color: var(--background-secondary);

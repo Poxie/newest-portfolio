@@ -5,8 +5,8 @@ export const AboutTabs: React.FC<{
     activeTab: string;
     setActiveTab: (tabId: string) => void;
 }> = ({ activeTab, setActiveTab }) => {
-    const tempRefs = useRef<RefObject<HTMLDivElement>[]>([]);
-    const [refs, setRefs] = useState<RefObject<HTMLDivElement>[]>([]);
+    const tempRefs = useRef<RefObject<HTMLButtonElement>[]>([]);
+    const [refs, setRefs] = useState<RefObject<HTMLButtonElement>[]>([]);
     const stripe = useRef<HTMLDivElement>(null);
 
     // Updating refs on change
@@ -27,7 +27,7 @@ export const AboutTabs: React.FC<{
     return(
         <div className={styles['about-tabs']}>
             {tabs.map(tab => {
-                const ref = React.createRef<HTMLDivElement>();
+                const ref = React.createRef<HTMLButtonElement>();
                 tempRefs.current.push(ref);
                 
                 const className = [
@@ -35,7 +35,7 @@ export const AboutTabs: React.FC<{
                     tab.id === activeTab ? styles['active'] : ''
                 ].join(' ');
                 return(
-                    <div 
+                    <button 
                         data-tab={tab.id}
                         className={className} 
                         onClick={() => setActiveTab(tab.id)}
@@ -43,7 +43,7 @@ export const AboutTabs: React.FC<{
                         ref={ref}
                     >
                         {tab.text}
-                    </div>
+                    </button>
                 )
             })}
             <div className={styles['about-stripe']} ref={stripe} />
