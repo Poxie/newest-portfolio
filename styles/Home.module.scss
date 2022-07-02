@@ -588,9 +588,12 @@
     margin-top: 20px;
     display: block;
 }
-.project-card-tech {
-    font-size: 14px;
+.project-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 40px;
+    font-size: 14px;
 }
 
 @media (max-width: 1000px) {

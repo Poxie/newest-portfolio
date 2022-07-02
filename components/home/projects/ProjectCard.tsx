@@ -5,7 +5,7 @@ import { CardType } from './ProjectsContent';
 
 const ITEM_DELAY = 100;
 const ITEM_DURATION = 1200;
-export const ProjectCard: React.FC<CardType & {index: number}> = ({ title, text, links, path, tech, index }) => {
+export const ProjectCard: React.FC<CardType & {index: number}> = ({ title, text, links, path, tech, date, index }) => {
     const [isAnimationDone, setIsAnimationDone] = useState(false);
     const [isHidden, setIsHidden] = useState(true);
     const ref = useRef<HTMLDivElement>(null);
@@ -58,8 +58,13 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ title, text,
                     {text}
                 </span>
             </div>
-            <div className={styles['project-card-tech']}>
-                {tech.join(', ')}
+            <div className={styles['project-card-footer']}>
+                <div className={styles['project-card-tech']}>
+                    {tech.join(', ')}
+                </div>
+                <span className={styles['project-card-date']}>
+                    {date}
+                </span>
             </div>
         </div>
     )
