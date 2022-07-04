@@ -21,7 +21,7 @@ export const ProjectTileFooter: React.FC<{
                         target="_blank" 
                         rel="noreferrer"
                         aria-label={link.text}
-                        style={{ animationDelay: `${1.4 + index * .2}s` }}
+                        style={{ animationDelay: `${1.5 + index * .2}s` }}
                         className={styles['project-tile-link']}
                     >
                         {link.icon}
