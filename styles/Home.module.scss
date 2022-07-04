@@ -615,6 +615,7 @@
 .project-tile {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
 
     &.active {
         p {
@@ -831,6 +832,20 @@
         padding-top: 50px;
         margin-bottom: 150px;
     }
+    .project-tiles-container {
+        gap: 120px;
+    }
+    .project-tile {
+        flex-direction: column;
+        gap: 0;
+    }
+    .project-tile-main {
+        order: 0 !important;
+    }
+    .project-tile-image {
+        width: 100%;
+        height: unset;
+    }
 }
 @media (max-width: 600px) {
     .project-cards {
@@ -894,5 +909,17 @@
 @media (max-width: 500px) {
     .header-animation {
         margin-bottom: 180px;
+    }
+    .project-tile-title {
+        font-size: 28px;
+    }
+    .project-tile-footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+    .project-tile-button {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 0 !important;
     }
 }
