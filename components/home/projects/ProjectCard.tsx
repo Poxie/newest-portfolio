@@ -30,7 +30,12 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ id, title, t
     }, []);
 
     // Function to scroll to project tile
-    const goToTile = useCallback(() => {
+    const goToTile = useCallback((e: React.MouseEvent) => {
+        // Checking if link is clicked, then prevent scroll
+        const target = e.target as Element;
+        if(['svg', 'path'].includes(target.tagName.toLowerCase())) return;
+
+        // Scrolling to project tile
         const element = document.querySelector(`[data-project="${id}"]`);
         const top = (element?.getBoundingClientRect().top || 0) + window.scrollY - SCROLL_FROM_TOP;
         window.scrollTo({ top });
