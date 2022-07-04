@@ -4,6 +4,7 @@ import { HomeHeader } from './header/HomeHeader';
 import { Navbar } from './navbar/Navbar';
 import { ProjectTiles } from './project-tiles/ProjectTiles';
 import { Projects } from './projects/Projects';
+import { Technologies } from './technologies/Technologies';
 
 export const Home = () => {
     return(
@@ -13,6 +14,7 @@ export const Home = () => {
             <About />
             <Projects />
             <ProjectTiles />
+            <Technologies />
         </>
     )
 }
