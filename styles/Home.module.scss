@@ -1025,6 +1025,9 @@
     .project-tile-button {
         width: 100%;
         justify-content: center;
-        padding: 15px 0 !important;
+        
+        a {
+            padding: 15px 0;
+        }
     }
 }
