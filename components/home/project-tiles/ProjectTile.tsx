@@ -37,7 +37,7 @@ export const ProjectTile: React.FC<TileType> = ({ id, image, title, description,
                 links={links}
                 path={path}
             />
-            <ProjectTileImage image={image} />
+            <ProjectTileImage image={image} path={path} />
         </div>
     )
 }

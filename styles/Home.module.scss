@@ -753,17 +753,19 @@
     height: 34px;
 }
 .project-tile-image {
-    height: 280px;
-    aspect-ratio: 5/3;
+    width: 100%;
+    height: 100%;
     position: relative;
     border-radius: var(--border-radius-primary);
     overflow: hidden;
+    transition: opacity .8s;
     
     .project-tile-image-container {
         opacity: 0;
         width: 100%;
         height: 100%;
         position: relative;
+        cursor: pointer;
     }
 
     &::after {
@@ -775,6 +777,50 @@
         width: 0;
         background-color: var(--color-primary);
     }
+}
+.project-tile-preview {
+    min-width: 460px;
+    aspect-ratio: 5/3;
+}
+.project-image-content {
+    width: 460px;
+    max-width: 100%;
+    aspect-ratio: 5/3;
+    z-index: 1415;
+    border-radius: var(--border-radius-primary);
+    overflow: hidden;
+
+    &.active {
+        transform: translate(-50%, -50%);
+        left: 50% !important;
+        top: 50% !important;
+        width: 75vw;
+        max-width: var(--width-main-max);
+        background-color: var(--background-primary);
+        z-index: 1415;
+
+        .project-tile-image {
+            opacity: 0;
+        }
+    }
+    
+    iframe {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+.project-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1414;
 }
 
 .technologies {
@@ -919,6 +965,12 @@
     .header-content {
         padding-top: 170px;
     }
+    .project-image-content {
+        &.active {
+            width: 100% !important;
+            height: 95vh;
+        }
+    }
 }
 @media (max-width: 900px) {
     .project-cards {
@@ -1009,7 +1061,7 @@
     }
     .project-tile-image {
         width: 100%;
-        height: unset;
+        height: 100%;
     }
     .technologies {
         padding-top: 25px;
@@ -1102,5 +1154,8 @@
         a {
             padding: 15px 0;
         }
+    }
+    .project-tile-preview {
+        min-width: unset;
     }
 }
