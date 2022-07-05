@@ -783,8 +783,6 @@
     aspect-ratio: 5/3;
 }
 .project-image-content {
-    width: 460px;
-    max-width: 100%;
     aspect-ratio: 5/3;
     z-index: 1415;
     border-radius: var(--border-radius-primary);
@@ -1059,10 +1057,6 @@
     .project-tile-main {
         order: 0 !important;
     }
-    .project-tile-image {
-        width: 100%;
-        height: 100%;
-    }
     .technologies {
         padding-top: 25px;
         padding-bottom: 25px;
@@ -1156,7 +1150,7 @@
         }
     }
     .project-tile-preview {
-        min-width: unset;
+        min-width: unset !important;
     }
     .project-tile-content {
         width: unset !important;
