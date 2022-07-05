@@ -7,17 +7,18 @@ export const ProjectTileImage: React.FC<{
     image: string;
     path: string;
 }> = ({ image, path }) => {
-    const [initialPosition, setInitialPosition] = useState({ left: 0, top: 0 });
     const [active, setActive] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
+    const imageContentRef = useRef<HTMLDivElement>(null);
 
     // Always updating initial position
     useEffect(() => {
         const updatePosition = () => {
-            if(!ref.current || active) return;
+            if(!ref.current || !imageContentRef.current || active) return;
             const { top, left } = ref.current.getBoundingClientRect();
-            setInitialPosition({ left, top });
+            imageContentRef.current.style.top = `${top}px`;
+            imageContentRef.current.style.left = `${left}px`;
         }
         updatePosition();
 
@@ -30,15 +31,15 @@ export const ProjectTileImage: React.FC<{
     }, [active]);
     const showPreview = () => {
         setActive(true);
-        document.body.style.overflow = 'hidden'
+        document.body.style.overflow = 'hidden';
     }
     const closePreview = () => {
         setActive(false);
         setIsAnimating(true);
-
+        
         setTimeout(() => {
             setIsAnimating(false);
-            document.body.style.overflow = 'auto'
+            document.body.style.overflow = 'auto';
         }, 1000);
     }
 
@@ -53,11 +54,10 @@ export const ProjectTileImage: React.FC<{
                 className={className}
                 onClick={showPreview}
                 style={{ 
-                    top: initialPosition.top, 
-                    left: initialPosition.left,
                     position: (active || isAnimating) ? 'fixed' : 'unset',
-                    transition: `transform 1s, left 1s, top 1s, width 1s, height 1s`
+                    transition: (active || isAnimating) ? `transform 1s, left 1s, top 1s, width 1s, height 1s` : 'unset'
                 }}
+                ref={imageContentRef}
             >
                 <div className={styles['project-tile-image']}>
                     <div className={styles['project-tile-image-container']}>
@@ -70,13 +70,18 @@ export const ProjectTileImage: React.FC<{
                 </div>
                 <AnimatePresence>
                     {active && (
-                        <motion.iframe 
-                            src={path} 
-                            frameBorder="0"
+                        <motion.div 
+                            initial={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                        />
+                        >
+                            <motion.iframe 
+                                src={path} 
+                                frameBorder="0"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: .8 }}
+                            />
+                        </motion.div>
                     )}
                 </AnimatePresence>
             </div>
