@@ -851,7 +851,7 @@
 }
 
 .footer {
-    padding: 80px;
+    padding: 80px 0;
     background-color: var(--color-primary);
     border-top: 1px solid var(--color-secondary);
     position: relative;
@@ -1079,6 +1079,9 @@
     }
     .technology-podiums {
         --row-amount: 1;
+    }
+    .footer {
+        font-size: 30px;
     }
 }
 @media (max-width: 500px) {
