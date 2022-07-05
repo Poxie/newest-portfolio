@@ -35,7 +35,7 @@ export const Footer = () => {
             
             <Button className={styles['footer-button']}>
                 <a href={'mailto:albin.karvling@hotmail.com'}>
-                    Let's do this!
+                    Let&apos;s do this!
                 </a>
             </Button>
         </div>
