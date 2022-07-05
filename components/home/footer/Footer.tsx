@@ -13,7 +13,7 @@ export const Footer = () => {
             const fromTop = ref.current.getBoundingClientRect().top;
             const percent = fromTop / window.innerHeight;
             
-            if(percent < .8) {
+            if(percent < .76) {
                 setHidden(false);
             }
         }
