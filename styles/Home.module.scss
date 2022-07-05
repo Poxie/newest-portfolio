@@ -783,6 +783,8 @@
     aspect-ratio: 5/3;
 }
 .project-image-content {
+    width: 460px;
+    max-width: 100%;
     aspect-ratio: 5/3;
     z-index: 1415;
     border-radius: var(--border-radius-primary);
@@ -1061,6 +1063,15 @@
         padding-top: 25px;
         padding-bottom: 25px;
     }
+    .project-tile-preview {
+        min-width: unset !important;
+    }
+    .project-image-content {
+        width: 100% !important;
+    }
+    .project-tile-content {
+        width: unset !important;
+    }
 }
 @media (max-width: 600px) {
     .project-cards {
@@ -1148,11 +1159,5 @@
         a {
             padding: 15px 0;
         }
-    }
-    .project-tile-preview {
-        min-width: unset !important;
-    }
-    .project-tile-content {
-        width: unset !important;
     }
 }
