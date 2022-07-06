@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationBuilding } from './HomeHeaderAnimationBuilding';
@@ -71,29 +72,35 @@ export const HomeHeaderAnimation = () => {
     }, []);
     
     return(
-        <div 
-            style={{ transform:`
-                perspective(800px) 
-                rotateX(${rotateX}deg) 
-                rotateY(${rotateY + globalRotateY}deg)
-                scale(${scale})
-            `}}
-            className={styles['header-animation']}
-            onClick={changeState}
-            ref={containerRef}
+        <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: .8 }}
         >
-            <HomeHeaderAnimationCoding
-                changeState={changeState}
-                active={state === 0}
-            />
-            <HomeHeaderAnimationBuilding 
-                changeState={changeState}
-                active={state === 1}
-            />
-            <HomeHeaderAnimationDeploying
-                changeState={changeState} 
-                active={state === 2}
-            />
-        </div>
+            <div 
+                style={{ transform:`
+                    perspective(800px) 
+                    rotateX(${rotateX}deg) 
+                    rotateY(${rotateY + globalRotateY}deg)
+                    scale(${scale})
+                `}}
+                className={styles['header-animation']}
+                onClick={changeState}
+                ref={containerRef}
+            >
+                <HomeHeaderAnimationCoding
+                    changeState={changeState}
+                    active={state === 0}
+                />
+                <HomeHeaderAnimationBuilding 
+                    changeState={changeState}
+                    active={state === 1}
+                />
+                <HomeHeaderAnimationDeploying
+                    changeState={changeState} 
+                    active={state === 2}
+                />
+            </div>
+        </motion.div>
     )
 }
