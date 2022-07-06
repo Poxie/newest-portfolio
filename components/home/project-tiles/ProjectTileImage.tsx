@@ -3,11 +3,13 @@ import styles from '../../../styles/Home.module.scss';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CloseIcon } from '../../../icons/CloseIcon';
+import { useDeviceType } from '../../../hooks/useDeviceType';
 
 export const ProjectTileImage: React.FC<{
     image: string;
     path: string;
 }> = ({ image, path }) => {
+    const deviceType = useDeviceType();
     const [active, setActive] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
@@ -44,15 +46,16 @@ export const ProjectTileImage: React.FC<{
         }, 1000);
     }
 
+    const isDesktop = deviceType === 'desktop';
     const className = [
-        styles['project-image-content'],
+        styles['project-tile-preview'],
         active ? styles['active'] : ''
     ].join(' ');
     return(
         <>
-        <div className={styles['project-tile-preview']} ref={ref}>
+        <div className={className} ref={ref}>
             <div
-                className={className}
+                className={styles['project-image-content']}
                 style={{ 
                     position: (active || isAnimating) ? 'fixed' : 'unset',
                     transition: (active || isAnimating) ? `transform 1s, left 1s, top 1s, width 1s, height 1s` : 'unset'
@@ -71,13 +74,29 @@ export const ProjectTileImage: React.FC<{
                 <AnimatePresence>
                     {active && (
                         <motion.div 
-                            initial={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            initial={{ opacity: 1, translateY: !isDesktop ? '100vh' : 0 }}
+                            animate={{ translateY: 0 }}
+                            exit={{ opacity: isDesktop ? 0 : 1 }}
+                            transition={{ duration: isDesktop ? .3 : .6 }}
+                            style={{ 
+                                width: '100%', 
+                                height: '100%', 
+                                position: 'fixed', 
+                                top: 0, 
+                                left: 0,
+                                zIndex: 14141414
+                            }}
                         >
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: .8 }}
+                                initial={{ opacity: isDesktop ? 0 : 1, translateY: 0 }}
+                                animate={{ opacity: 1, translateY: 0 }}
+                                exit={{ opacity: 1, translateY: !isDesktop ? '100vh' : 0 }}
+                                transition={{ delay: isDesktop ? .8 : 0, duration: isDesktop ? .3 : .6 }}
+                                style={{ 
+                                    width: '100%', 
+                                    height: '100%',
+                                    backgroundColor: 'var(--background-primary)'
+                                }}
                             >
                                 <div className={styles['iframe-controls']} onClick={closePreview}>
                                     <CloseIcon />
@@ -91,18 +110,18 @@ export const ProjectTileImage: React.FC<{
                     )}
                 </AnimatePresence>
             </div>
+            <AnimatePresence>
+                {active && (
+                    <motion.div 
+                        className={styles['project-backdrop']} 
+                        onClick={closePreview}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    />
+                )}
+            </AnimatePresence>
         </div>
-        <AnimatePresence>
-            {active && (
-                <motion.div 
-                    className={styles['project-backdrop']} 
-                    onClick={closePreview}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                />
-            )}
-        </AnimatePresence>
         </>
     )
 }

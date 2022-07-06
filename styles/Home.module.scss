@@ -779,8 +779,25 @@
     }
 }
 .project-tile-preview {
-    min-width: 460px;
+    width: 460px;
+    max-width: 100%;
     aspect-ratio: 5/3;
+    position: relative;
+
+    &.active {
+        .project-image-content {
+            transform: translate(-50%, -50%);
+            left: 50% !important;
+            top: 50% !important;
+            width: 75vw;
+            background-color: var(--background-primary);
+            z-index: 1415;
+    
+            .project-tile-image {
+                opacity: 0;
+            }
+        }
+    }
 }
 .project-image-content {
     width: 460px;
@@ -789,20 +806,6 @@
     z-index: 1415;
     border-radius: var(--border-radius-primary);
     overflow: hidden;
-
-    &.active {
-        transform: translate(-50%, -50%);
-        left: 50% !important;
-        top: 50% !important;
-        width: 75vw;
-        max-width: var(--width-main-max);
-        background-color: var(--background-primary);
-        z-index: 1415;
-
-        .project-tile-image {
-            opacity: 0;
-        }
-    }
     
     iframe {
         width: 100%;
@@ -828,6 +831,7 @@
         transition: fill .3s;
         background-color: var(--color-primary);
         border-radius: 8px;
+        box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
         
         &:hover {
             fill: var(--text-light-primary);
@@ -986,10 +990,21 @@
     .header-content {
         padding-top: 170px;
     }
-    .project-image-content {
+    .project-tile-preview {
+        .project-image-content {
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+        }
         &.active {
-            width: 100% !important;
-            height: 95vh;
+            .project-image-content {
+                height: unset;
+                width: 100% !important;
+                transform: unset;
+                left: unset !important;
+                top: unset !important;
+                z-index: 141414;
+            }
         }
     }
 }
@@ -1086,9 +1101,6 @@
     }
     .project-tile-preview {
         min-width: unset !important;
-    }
-    .project-image-content {
-        width: 100% !important;
     }
     .project-tile-content {
         width: unset !important;
