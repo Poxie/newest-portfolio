@@ -518,6 +518,7 @@
         width: 100%;
         margin-top: -100px;
         pointer-events: none;
+        transform: translateY(6px);
     }
 }
 .projects-container {
@@ -608,7 +609,6 @@
 }
 
 .project-tiles {
-    margin-top: -5px;
     background-color: var(--background-secondary);
     padding: 100px 0;
 }
