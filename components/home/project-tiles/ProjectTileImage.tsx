@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
+import { CloseIcon } from '../../../icons/CloseIcon';
 
 export const ProjectTileImage: React.FC<{
     image: string;
@@ -52,14 +53,13 @@ export const ProjectTileImage: React.FC<{
         <div className={styles['project-tile-preview']} ref={ref}>
             <div
                 className={className}
-                onClick={showPreview}
                 style={{ 
                     position: (active || isAnimating) ? 'fixed' : 'unset',
                     transition: (active || isAnimating) ? `transform 1s, left 1s, top 1s, width 1s, height 1s` : 'unset'
                 }}
                 ref={imageContentRef}
             >
-                <div className={styles['project-tile-image']}>
+                <div className={styles['project-tile-image']} onClick={showPreview}>
                     <div className={styles['project-tile-image-container']}>
                         <Image 
                             src={image}
@@ -74,13 +74,19 @@ export const ProjectTileImage: React.FC<{
                             initial={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         >
-                            <motion.iframe 
-                                src={path} 
-                                frameBorder="0"
+                            <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: .8 }}
-                            />
+                            >
+                                <div className={styles['iframe-controls']} onClick={closePreview}>
+                                    <CloseIcon />
+                                </div>
+                                <iframe 
+                                    src={path} 
+                                    frameBorder="0"
+                                />
+                            </motion.div>
                         </motion.div>
                     )}
                 </AnimatePresence>

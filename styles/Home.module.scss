@@ -813,6 +813,27 @@
         height: 100%;
     }
 }
+.iframe-controls {
+    position: fixed;
+    z-index: 2;
+    top: 15px;
+    right: 30px;
+
+    svg {
+        width: 45px;
+        fill: var(--text-light-secondary);
+        padding: 10px;
+        display: block;
+        cursor: pointer;
+        transition: fill .3s;
+        background-color: var(--color-primary);
+        border-radius: 8px;
+        
+        &:hover {
+            fill: var(--text-light-primary);
+        }
+    }
+}
 .project-backdrop {
     position: fixed;
     top: 0;
