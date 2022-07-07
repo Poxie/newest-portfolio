@@ -16,3 +16,9 @@
     //     border-top: 8px solid var(--popup-background-primary);
     // }
 }
+@media (max-width: 500px) {
+    .container {
+        width: 100%;
+        left: 0 !important;
+    }
+}
