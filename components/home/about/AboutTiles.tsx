@@ -8,7 +8,7 @@ export const AboutTiles = () => {
             {tiles.map((tile, index) => (
                 <div 
                     className={styles['about-tile']}
-                    style={{ animationDelay: `${index * .2 + .1}s` }}
+                    style={{ animationDelay: `${index * .2 + .6}s` }}
                     key={tile}
                 >
                     {tile}
