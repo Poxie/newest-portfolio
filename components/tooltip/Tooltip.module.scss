@@ -13,6 +13,8 @@
         transition: opacity .2s, transform .2s;
         white-space: nowrap;
         background-color: var(--tooltip-background-primary);
+        color: var(--text-light-primary);
+        font-weight: 600;
     }
     &:hover::after {
         transform: translateX(-50%) scale(1);
