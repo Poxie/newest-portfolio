@@ -19,7 +19,7 @@ export const ProjectTileFooter: React.FC<{
             </Button>
             <div className={styles['project-tile-links']}>
                 {links.map((link, index) => (
-                    <Tooltip content={link.title}>
+                    <Tooltip content={link.title} key={link.title}>
                         <a 
                             href={link.path} 
                             target="_blank" 
@@ -27,7 +27,6 @@ export const ProjectTileFooter: React.FC<{
                             aria-label={link.title}
                             style={{ animationDelay: `${1.5 + index * .2}s` }}
                             className={styles['project-tile-link']}
-                            key={link.title}
                         >
                             {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
                         </a>

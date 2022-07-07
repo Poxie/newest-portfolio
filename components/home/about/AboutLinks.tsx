@@ -20,7 +20,7 @@ export const AboutLinks = () => {
     return(
         <div className={styles['about-links']}>
             {links.map((link, index) => (
-                <Tooltip content={link.title}>
+                <Tooltip content={link.title} key={link.id}>
                     <a 
                         className={styles['about-link']}
                         style={{ animationDelay: `${index * .23 + .7}s` }}
@@ -28,7 +28,6 @@ export const AboutLinks = () => {
                         target="_blank"
                         rel="noreferrer"
                         aria-label={link.title}
-                        key={link.id}
                     >
                         {getLinkIcon(link.id)}
                     </a>
