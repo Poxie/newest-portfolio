@@ -1112,15 +1112,25 @@
     .about-container {
         padding-top: 40px;
     }
-    .about-content {
+    .about-card {
         flex-direction: column;
     }
-    .about-tabs {
-        display: flex;
-        margin-bottom: 10px;
+    .about-tiles {
+        transform: none;
     }
-    .about-card {
-        margin-left: 0;
+    @keyframes tile-in {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        50% {
+            transform: translateY(-15px);
+            opacity: 1;
+        }
+        95%, 100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
     .projects-container {
         padding-top: 50px;
