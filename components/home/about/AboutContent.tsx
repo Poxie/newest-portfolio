@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { AboutCard } from './AboutCard';
@@ -45,7 +46,7 @@ export const AboutContent = () => {
             
             <AboutCard 
                 {...activeCard}
-                footer={<AboutTimeline />}
+                footer={tab === 'my-story' ? <AboutTimeline /> : null}
                 key={tab}
             />
         </div>
