@@ -4,6 +4,7 @@ import { GithubIcon } from '../../../assets/icons/GithubIcon';
 import { ProjectLinkType } from '../../../assets/projects/types';
 import styles from '../../../styles/Home.module.scss';
 import Button from '../../button';
+import Tooltip from '../../tooltip';
 
 export const ProjectTileFooter: React.FC<{
     links: ProjectLinkType[];
@@ -18,17 +19,19 @@ export const ProjectTileFooter: React.FC<{
             </Button>
             <div className={styles['project-tile-links']}>
                 {links.map((link, index) => (
-                    <a 
-                        href={link.path} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        aria-label={link.title}
-                        style={{ animationDelay: `${1.5 + index * .2}s` }}
-                        className={styles['project-tile-link']}
-                        key={link.title}
-                    >
-                        {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
-                    </a>
+                    <Tooltip content={link.title}>
+                        <a 
+                            href={link.path} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            aria-label={link.title}
+                            style={{ animationDelay: `${1.5 + index * .2}s` }}
+                            className={styles['project-tile-link']}
+                            key={link.title}
+                        >
+                            {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
+                        </a>
+                    </Tooltip>
                 ))}
             </div>
         </div>

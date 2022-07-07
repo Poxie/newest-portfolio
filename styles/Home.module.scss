@@ -722,6 +722,7 @@
 .project-tile-footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 .project-tile-button {
     opacity: 0;
@@ -751,6 +752,7 @@
     border-radius: 4px;
     width: 34px;
     height: 34px;
+    display: block;
 }
 .project-tile-image {
     width: 100%;
