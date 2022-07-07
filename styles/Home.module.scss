@@ -1146,6 +1146,9 @@
     .project-tile-main {
         order: 0 !important;
     }
+    .project-tile-main, .project-tile-preview, .project-image-content {
+        width: 100%;
+    }
     .technologies {
         padding-top: 25px;
         padding-bottom: 25px;
