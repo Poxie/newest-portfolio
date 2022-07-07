@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import React, { createRef } from 'react';
+import React, { createRef, useState } from 'react';
 import { RefObject } from 'react';
 import { usePopup } from '../../../contexts/PopupProvider';
 import { TimelinePopup } from '../../../popups/timeline/TimelinePopup';
@@ -12,13 +12,28 @@ const timeline = [
     { year: 22, date: 'June, 2022', title: 'Things get prettier', text: 'Coding as a hobby has been great this far. However, I am getting older, and I genuinely want my programming journey to come along with my outside life.' },
 ]
 export const AboutTimeline = () => {
+    const [popupActive, setPopupActive] = useState(false);
     const { setPopup, closePopup } = usePopup();
 
     const showPopup = (date: string, ref: RefObject<HTMLElement>) => {
+        // If popup is open, close
+        if(popupActive) {
+            closePopup();
+            setPopupActive(false);
+            return;
+        }
+
+        // Else find correct time to display
         const time = timeline.find(dot => dot.date === date);
         if(!time) return;
         
+        // And display timeline popup
         setPopup(<TimelinePopup {...time} />, ref);
+        setPopupActive(true);
+    }
+    const hidePopup = () => {
+        setPopupActive(false);
+        closePopup();
     }
 
     return(
@@ -29,18 +44,19 @@ export const AboutTimeline = () => {
             exit={{ maxHeight: 0 }}
         >
             {timeline.map((time, index) => {
-                const ref = createRef<HTMLDivElement>();
+                const ref = createRef<HTMLButtonElement>();
                 return(
-                    <div
+                    <button
+                        onClick={() => showPopup(time.date, ref)}
                         onMouseEnter={() => showPopup(time.date, ref)}
-                        onMouseLeave={closePopup} 
+                        onMouseLeave={hidePopup} 
                         className={styles['timeline-dot']}
                         style={{ animationDelay: `${index * .8 + 1.2}s` }}
                         key={time.title}
                         ref={ref}
                     >
                         {time.year}
-                    </div>
+                    </button>
                 )
             })}
             <div className={styles['timeline-connector']} />
