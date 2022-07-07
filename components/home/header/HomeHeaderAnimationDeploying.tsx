@@ -1,6 +1,6 @@
 import React, { CSSProperties, useEffect } from 'react';
-import { ArrowUploadIcon } from '../../../icons/ArrowUploadIcon';
-import { DeployIcon } from '../../../icons/DeployIcon';
+import { ArrowUploadIcon } from '../../../assets/icons/ArrowUploadIcon';
+import { DeployIcon } from '../../../assets/icons/DeployIcon';
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationPercentage } from './HomeHeaderAnimationPercentage';
 

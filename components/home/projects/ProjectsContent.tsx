@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.scss';
-import { FigmaIcon } from '../../../icons/FigmaIcon';
-import { GithubIcon } from '../../../icons/GithubIcon';
+import { FigmaIcon } from '../../../assets/icons/FigmaIcon';
+import { GithubIcon } from '../../../assets/icons/GithubIcon';
 import { ProjectCard } from './ProjectCard';
 
 const cards = [

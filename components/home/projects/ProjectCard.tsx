@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { ExternalLinkIcon } from '../../../icons/ExternalLinkIcon';
+import { ExternalLinkIcon } from '../../../assets/icons/ExternalLinkIcon';
 import styles from '../../../styles/Home.module.scss';
 import Tooltip from '../../tooltip';
 import { CardType } from './ProjectsContent';

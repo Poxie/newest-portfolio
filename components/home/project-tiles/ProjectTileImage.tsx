@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
-import { CloseIcon } from '../../../icons/CloseIcon';
+import { CloseIcon } from '../../../assets/icons/CloseIcon';
 import { useDeviceType } from '../../../hooks/useDeviceType';
 
 export const ProjectTileImage: React.FC<{

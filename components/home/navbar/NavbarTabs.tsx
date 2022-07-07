@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { HamIcon } from '../../../icons/HamIcon';
+import { HamIcon } from '../../../assets/icons/HamIcon';
 import styles from '../../../styles/Home.module.scss';
 import { NavbarTab } from './NavbarTab';
 

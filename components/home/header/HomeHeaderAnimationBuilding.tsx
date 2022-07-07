@@ -1,5 +1,5 @@
 import React, { CSSProperties, useEffect, useRef } from 'react';
-import { ToolsIcon } from '../../../icons/ToolsIcon';
+import { ToolsIcon } from '../../../assets/icons/ToolsIcon';
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationPercentage } from './HomeHeaderAnimationPercentage';
 

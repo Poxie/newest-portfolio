@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectsWaveIcon } from '../../../icons/ProjectsWaveIcon';
+import { ProjectsWaveIcon } from '../../../assets/icons/ProjectsWaveIcon';
 import styles from '../../../styles/Home.module.scss';
 import { ProjectsContent } from './ProjectsContent';
 import { ProjectsHeader } from './ProjectsHeader';

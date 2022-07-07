@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeWaveIcon } from '../../../icons/HomeWaveIcon';
+import { HomeWaveIcon } from '../../../assets/icons/HomeWaveIcon';
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimation } from './HomeHeaderAnimation';
 import { HomeHeaderText } from './HomeHeaderText';

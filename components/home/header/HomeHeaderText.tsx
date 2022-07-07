@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import { ArrowIcon } from '../../../icons/ArrowIcon';
+import { ArrowIcon } from '../../../assets/icons/ArrowIcon';
 import styles from '../../../styles/Home.module.scss';
 import Button from '../../button';
 import { HomeHeaderTextMain } from './HomeHeaderTextMain';

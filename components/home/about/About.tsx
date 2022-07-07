@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutWaveIcon } from '../../../icons/AboutWaveIcon';
+import { AboutWaveIcon } from '../../../assets/icons/AboutWaveIcon';
 import styles from '../../../styles/Home.module.scss';
 import { AboutContent } from './AboutContent';
 import { AboutHeader } from './AboutHeader';

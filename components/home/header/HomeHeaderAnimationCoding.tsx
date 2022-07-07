@@ -1,5 +1,5 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
-import { CodeIcon } from '../../../icons/CodeIcon';
+import { CodeIcon } from '../../../assets/icons/CodeIcon';
 import styles from '../../../styles/Home.module.scss';
 import { HomeHeaderAnimationPercentage } from './HomeHeaderAnimationPercentage';
 

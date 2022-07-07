@@ -1,6 +1,6 @@
 import React from 'react';
-import { FigmaIcon } from '../../../icons/FigmaIcon';
-import { GithubIcon } from '../../../icons/GithubIcon';
+import { FigmaIcon } from '../../../assets/icons/FigmaIcon';
+import { GithubIcon } from '../../../assets/icons/GithubIcon';
 import styles from '../../../styles/Home.module.scss';
 import { ProjectTile } from './ProjectTile';
 
