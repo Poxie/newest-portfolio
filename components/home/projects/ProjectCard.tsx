@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ExternalLinkIcon } from '../../../icons/ExternalLinkIcon';
 import styles from '../../../styles/Home.module.scss';
+import Tooltip from '../../tooltip';
 import { CardType } from './ProjectsContent';
 
 const ITEM_DELAY = 100;
@@ -59,13 +60,17 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ id, title, t
                     </h5>
                     <div className={styles['project-card-links']}>
                         {links.map(link => (
-                            <a href={link.path} rel="noreferrer" target="_blank" key={link.path}>
-                                {link.icon}
-                            </a>
+                            <Tooltip content={link.title} key={link.path}>
+                                <a href={link.path} rel="noreferrer" target="_blank">
+                                    {link.icon}
+                                </a>
+                            </Tooltip>
                         ))}
-                        <a href={path} rel="noreferrer" target="_blank">
-                            <ExternalLinkIcon />
-                        </a>
+                        <Tooltip content={'Go to site'}>
+                            <a href={path} rel="noreferrer" target="_blank">
+                                <ExternalLinkIcon />
+                            </a>
+                        </Tooltip>
                     </div>
                 </div>
                 <span className={styles['project-card-description']}>
