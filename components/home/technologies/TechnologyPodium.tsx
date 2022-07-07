@@ -1,8 +1,8 @@
 import React from 'react';
+import { TechnologyType } from '../../../assets/technologies/types';
 import styles from '../../../styles/Home.module.scss';
-import { TechnologyItem } from './Technologies';
 
-export const TechnologyPodium: React.FC<TechnologyItem & {index: number}> = ({ title, description, extras, index }) => {
+export const TechnologyPodium: React.FC<TechnologyType & {index: number}> = ({ title, description, extras, index }) => {
     const animationDelay = `${Math.abs((index - Math.floor(4 / 2)) / 2)}s`;
 
     const className = [
