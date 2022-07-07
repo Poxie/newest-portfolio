@@ -1,0 +1,10 @@
+{
+    "tabs": [
+        { "id": "who-am-i", "text": "Who am I?" },
+        { "id": "my-story", "text": "My story" }
+    ],
+    "cards": [
+        { "title": "Who am I?", "text": "My name is Albin Kärvling and I am 18 years old. I am currently spending a lot of my time at high school where I study natural science. I have always had great interest in web development despite my studies of natural science. Therefore, a lot of my time outside of school is spent programming. Further down the site, some of my projects can be found. If you don't find me programming it is likely you can find me playing games with friends or cuddling with my cats!", "id": "who-am-i", "tiles": ["18 years old", "Natural science program", "Last year of high school", "Never-ending curiousity", "Great interest in full-stack"] },
+        { "title": "My story", "text": "My story has its beginning in the early days of 2017. A friend of mine introduced me to JavaScript, but I showed little to no interest in programming. My journey began after a while of being persuaded. At first things were not looking nice, but I quickly picked up the main ideas of the languages of web development. As we move along the timeline React comes into the picture. It revolutionized the way I wrote code and I fell in love immediately. Since the rise of React I have picked up different design tools and different technologies for backend development; enough to call myself a full-stack developer.", "id": "my-story", "tiles": ["First day in 2017", "Quickly picked up frontend", "Grew to love React", "Began my backend journey", "Discovered design tools"] }
+    ]
+}
