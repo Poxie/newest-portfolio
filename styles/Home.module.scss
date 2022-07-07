@@ -606,13 +606,13 @@
         width: 0;
     }
     24%, 25% {
-        width: calc(25% + 2 * var(--dot-width));
+        width: 33%;
     }
     34%,35% {
-        width: calc(50% + 3 * var(--dot-width))
+        width: 66%;
     }
-    42%, 100% {
-        width: calc(75% + 4 * var(--dot-width))
+    44%, 100% {
+        width: 100%;
     }
 }
 
