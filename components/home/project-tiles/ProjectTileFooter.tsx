@@ -1,10 +1,12 @@
 import React from 'react';
+import { FigmaIcon } from '../../../assets/icons/FigmaIcon';
+import { GithubIcon } from '../../../assets/icons/GithubIcon';
+import { ProjectLinkType } from '../../../assets/projects/types';
 import styles from '../../../styles/Home.module.scss';
 import Button from '../../button';
-import { TileLink } from './ProjectTiles';
 
 export const ProjectTileFooter: React.FC<{
-    links: TileLink[];
+    links: ProjectLinkType[];
     path: string;
 }> = ({ links, path }) => {
     return(
@@ -20,12 +22,12 @@ export const ProjectTileFooter: React.FC<{
                         href={link.path} 
                         target="_blank" 
                         rel="noreferrer"
-                        aria-label={link.text}
+                        aria-label={link.title}
                         style={{ animationDelay: `${1.5 + index * .2}s` }}
                         className={styles['project-tile-link']}
-                        key={link.text}
+                        key={link.title}
                     >
-                        {link.icon}
+                        {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
                     </a>
                 ))}
             </div>

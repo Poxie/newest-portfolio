@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss'
-import { TileType } from './ProjectTiles';
 import { ProjectTileMain } from './ProjectTileMain';
 import { ProjectTileImage } from './ProjectTileImage';
+import { ProjectType } from '../../../assets/projects/types';
 
-export const ProjectTile: React.FC<TileType> = ({ id, image, title, description, links, path }) => {
+export const ProjectTile: React.FC<ProjectType> = ({ id, image, title, longDescription, links, path }) => {
     const [active, setActive] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ export const ProjectTile: React.FC<TileType> = ({ id, image, title, description,
         <div className={className} data-project={id} ref={ref}>
             <ProjectTileMain 
                 title={title} 
-                description={description}
+                description={longDescription}
                 links={links}
                 path={path}
             />

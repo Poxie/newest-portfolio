@@ -1,13 +1,13 @@
 import React from 'react';
+import { ProjectLinkType } from '../../../assets/projects/types';
 import styles from '../../../styles/Home.module.scss';
 import { ProjectTileFooter } from './ProjectTileFooter';
-import { TileLink } from './ProjectTiles';
 
 export const ProjectTileMain: React.FC<{
     title: string;
     description: string;
     path: string;
-    links: TileLink[];
+    links: ProjectLinkType[];
 }> = ({ title, description, path, links }) => {
     return(
         <div className={styles['project-tile-main']}>

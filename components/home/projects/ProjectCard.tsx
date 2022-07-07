@@ -1,13 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ExternalLinkIcon } from '../../../assets/icons/ExternalLinkIcon';
+import { FigmaIcon } from '../../../assets/icons/FigmaIcon';
+import { GithubIcon } from '../../../assets/icons/GithubIcon';
+import { ProjectLinkType, ProjectType } from '../../../assets/projects/types';
 import styles from '../../../styles/Home.module.scss';
 import Tooltip from '../../tooltip';
-import { CardType } from './ProjectsContent';
 
 const ITEM_DELAY = 100;
 const ITEM_DURATION = 1200;
 const SCROLL_FROM_TOP = 200;
-export const ProjectCard: React.FC<CardType & {index: number}> = ({ id, title, text, links, path, tech, date, index }) => {
+export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title, shortDescription, links, path, techStack, date, index }) => {
     const [isAnimationDone, setIsAnimationDone] = useState(false);
     const [isHidden, setIsHidden] = useState(true);
     const ref = useRef<HTMLDivElement>(null);
@@ -62,7 +64,7 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ id, title, t
                         {links.map(link => (
                             <Tooltip content={link.title} key={link.path}>
                                 <a href={link.path} rel="noreferrer" target="_blank">
-                                    {link.icon}
+                                    {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
                                 </a>
                             </Tooltip>
                         ))}
@@ -74,12 +76,12 @@ export const ProjectCard: React.FC<CardType & {index: number}> = ({ id, title, t
                     </div>
                 </div>
                 <span className={styles['project-card-description']}>
-                    {text}
+                    {shortDescription}
                 </span>
             </div>
             <div className={styles['project-card-footer']}>
                 <div className={styles['project-card-tech']}>
-                    {tech.join(', ')}
+                    {techStack.join(', ')}
                 </div>
                 <span className={styles['project-card-date']}>
                     {date}
