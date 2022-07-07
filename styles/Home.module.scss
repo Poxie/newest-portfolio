@@ -493,10 +493,12 @@
 .about-card {
     max-width: 100%;
     margin-left: 50px;
+    flex: 1;
     display: flex;
+    justify-content: space-between;
 }
 .about-card-text {
-    width: 500px;
+    width: 600px;
     max-width: 100%;
 
     h4 {
@@ -509,6 +511,37 @@
         animation: header-fade-in 1s forwards;
         animation-delay: .3s;
         opacity: 0;
+    }
+}
+.about-tiles {
+    gap: 7px;
+    display: flex;
+    flex-direction: column;
+    transform: perspective(200px) rotateY(-4deg);
+}
+.about-tile {
+    font-weight: 500;
+    color: var(--text-secondary);
+    padding: 12px 75px 12px 15px;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    border-right: 10px solid var(--color-primary);
+    animation: tile-in 1s forwards;
+    opacity: 0;
+    box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
+}
+@keyframes tile-in {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-25px);
+        opacity: 1;
+    }
+    95%, 100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
