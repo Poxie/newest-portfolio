@@ -457,6 +457,12 @@
     margin-bottom: 30px;
     gap: 25px;
 }
+.hidden {
+    .about-tab, .about-stripe, .about-card-text h4, .about-card-text p, .about-tile {
+        animation: unset !important;
+        opacity: 0 !important;
+    }
+}
 .about-tab {
     padding: 13px 0;
     // border-radius: var(--border-radius-primary) var(--border-radius-primary) 0 0;
@@ -466,7 +472,8 @@
     text-transform: uppercase;
     color: var(--text-secondary);
     font-size: 15px;
-    opacity: .8;
+    opacity: 0;
+    animation: header-fade-in 1s forwards;
 
     &:hover {
         color: var(--color-primary);
@@ -487,12 +494,14 @@
     top: 100%;
     left: 0;
     transition: left .3s, width .3s;
+    animation: header-fade-in 1s forwards;
 }
 .about-card {
     max-width: 100%;
     flex: 1;
     display: flex;
     justify-content: space-between;
+    gap: 35px;
 }
 .about-card-text {
     width: 700px;
@@ -503,10 +512,12 @@
         margin-bottom: 12px;
         font-size: 28px;
         animation: header-fade-in 1s forwards;
+        animation-delay: .3s;
+        opacity: 0;
     }
     p {
         animation: header-fade-in 1s forwards;
-        animation-delay: .3s;
+        animation-delay: .5s;
         opacity: 0;
     }
 }

@@ -28,7 +28,7 @@ export const AboutTabs: React.FC<{
     const tabs = [{text: 'Who am I?', id: 'who-am-i'}, {text: 'My story', id: 'my-story'}];
     return(
         <div className={styles['about-tabs']}>
-            {tabs.map(tab => {
+            {tabs.map((tab, index) => {
                 const ref = React.createRef<HTMLButtonElement>();
                 tempRefs.current.push(ref);
                 
@@ -39,7 +39,8 @@ export const AboutTabs: React.FC<{
                 return(
                     <button 
                         data-tab={tab.id}
-                        className={className} 
+                        className={className}
+                        style={{ animationDelay: `${index * .2}s` }}
                         onClick={() => setActiveTab(tab.id)}
                         key={tab.id}
                         ref={ref}
