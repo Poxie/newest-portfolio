@@ -30,7 +30,6 @@ export const AboutTimeline = () => {
                         onMouseLeave={closePopup} 
                         className={styles['timeline-dot']}
                         style={{ animationDelay: `${index * .8 + 1.2}s` }}
-                        onClick={() => showPopup(time.date, ref)}
                         key={time.title}
                         ref={ref}
                     >
