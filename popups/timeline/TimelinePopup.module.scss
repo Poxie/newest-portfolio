@@ -1,0 +1,18 @@
+.container {
+    width: 350px;
+    padding: 5px;
+}
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.text, .date {
+    font-size: 15px;
+    color: var(--text-light-secondary);
+    font-weight: 600;
+}
+.date {
+    margin-top: 10px;
+    font-size: 13px;
+}

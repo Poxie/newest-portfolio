@@ -7,8 +7,10 @@ export const AboutCard: React.FC<{
     title: string;
     text: string;
     tiles: string[];
-}> = ({ title, text, tiles }) => {
+    footer: any;
+}> = ({ title, text, tiles, footer }) => {
     return(
+        <>
         <div className={styles['about-card']}>
             <div className={styles['about-card-text']}>
                 <h4>
@@ -20,5 +22,7 @@ export const AboutCard: React.FC<{
             </div>
             <AboutTiles tiles={tiles} />
         </div>
+        {footer}
+        </>
     )
 }

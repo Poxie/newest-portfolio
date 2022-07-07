@@ -3,6 +3,7 @@ import styles from '../../../styles/Home.module.scss';
 import { AboutCard } from './AboutCard';
 import { AboutTabs } from './AboutTabs';
 import { AboutTiles } from './AboutTiles';
+import { AboutTimeline } from './AboutTimeline';
 
 const cards = [
     { title: 'Who am I?', text: 'My name is Albin Kärvling and I am 18 years old. I am currently spending a lot of my time at high school where I study natural science. I have always had great interest in web development despite my studies of natural science. Therefore, a lot of my time outside of school is spent programming. Further down the site, some of my projects can be found. If you don\'t find me programming it is likely you can find me playing games with friends or cuddling with my cats!', id: 'who-am-i', tiles: ['18 years old', 'Natural science program', 'Last year of high school', 'Never-ending curiousity', 'Great interest in full-stack'] },
@@ -44,6 +45,7 @@ export const AboutContent = () => {
             
             <AboutCard 
                 {...activeCard}
+                footer={<AboutTimeline />}
                 key={tab}
             />
         </div>
