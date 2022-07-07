@@ -13,7 +13,7 @@ export const AboutCard: React.FC<{
                 <h4>
                     {title}
                 </h4>
-                <p contentEditable={true} style={{ outline: 'none' }}>
+                <p>
                     {text}
                 </p>
             </div>
