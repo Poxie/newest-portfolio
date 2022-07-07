@@ -432,7 +432,6 @@
 }
 
 .about {
-    // padding: 50px 0;
     background-color: var(--text-light-primary);
 
     &>svg {
@@ -445,60 +444,58 @@
     max-width: var(--width-main-max);
     width: var(--width-main);
     margin: 0 auto;
+    padding-bottom: 40px;
 }
 .about-header {
     margin-top: 0;
     margin-bottom: 25px;
     font-size: 50px;
 }
-.about-content {
-    display: flex;
-}
 .about-tabs {
     position: relative;
     display: flex;
-    flex-direction: column;
+    margin-bottom: 30px;
+    gap: 25px;
 }
 .about-tab {
-    padding: 9px 12px;
-    margin-left: -14px;
-    margin-right: 20px;
-    margin-bottom: 8px;
-    border-radius: var(--border-radius-primary);
+    padding: 13px 0;
+    // border-radius: var(--border-radius-primary) var(--border-radius-primary) 0 0;
     cursor: pointer;
-    transition: background-color .3s, color .3s;
+    transition: background-color .3s, color .3s, opacity .3s;
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-secondary);
     font-size: 15px;
+    opacity: .8;
 
     &:hover {
-        background-color: var(--background-secondary);
-        color: var(--text-primary);
+        color: var(--color-primary);
+        opacity: 1;
     }
     &.active {
-        color: var(--text-primary);
+        opacity: 1;
+        color: var(--color-primary);
+        // background-color: var(--background-secondary);
     }
 }
 .about-stripe {
-    width: 2px;
-    height: 36px;
+    width: 36px;
+    height: 2px;
     background-color: var(--color-primary);
     border-radius: 120px;
     position: absolute;
-    top: 0;
-    right: 0;
-    transition: top .3s;
+    top: 100%;
+    left: 0;
+    transition: left .3s, width .3s;
 }
 .about-card {
     max-width: 100%;
-    margin-left: 50px;
     flex: 1;
     display: flex;
     justify-content: space-between;
 }
 .about-card-text {
-    width: 600px;
+    width: 700px;
     max-width: 100%;
 
     h4 {

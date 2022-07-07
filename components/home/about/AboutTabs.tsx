@@ -17,8 +17,10 @@ export const AboutTabs: React.FC<{
         refs.forEach(ref => {
             if(!stripe.current) return;
             if(ref.current?.getAttribute('data-tab') === activeTab) {
-                const top = ref.current.offsetTop;
-                stripe.current.style.top = `${top}px`;
+                const left = ref.current.offsetLeft;
+                const width = ref.current.offsetWidth;
+                stripe.current.style.left = `${left}px`;
+                stripe.current.style.width = `${width}px`;
             }
         })
     }, [refs, activeTab]);
