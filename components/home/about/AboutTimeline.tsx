@@ -24,9 +24,9 @@ export const AboutTimeline = () => {
     return(
         <motion.div 
             className={styles['timeline']}
-            initial={{ height: 0 }}
-            animate={{ height: 'var(--dot-height)' }}
-            exit={{ height: 0 }}
+            initial={{ maxHeight: 0 }}
+            animate={{ maxHeight: 'var(--dot-height)' }}
+            exit={{ maxHeight: 0 }}
         >
             {timeline.map((time, index) => {
                 const ref = createRef<HTMLDivElement>();
