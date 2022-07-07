@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.scss';
+import { AboutTiles } from './AboutTiles';
 
 export const AboutCard: React.FC<{
     id: string;
     title: string;
     text: string;
-    extra: any;
-}> = ({ title, text, extra }) => {
+    tiles: string[];
+}> = ({ title, text, tiles }) => {
     return(
         <div className={styles['about-card']}>
             <div className={styles['about-card-text']}>
@@ -17,7 +18,7 @@ export const AboutCard: React.FC<{
                     {text}
                 </p>
             </div>
-            {extra}
+            <AboutTiles tiles={tiles} />
         </div>
     )
 }
