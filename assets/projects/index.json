@@ -37,7 +37,7 @@
         "path": "https://poxen.dev",
         "links": [
             { "title": "View design", "icon": "figma" , "path": "https://www.figma.com/file/i7seI05ANE4nxrMzE04rDd/Untitled?node-id=3%3A3"},
-            { "title": "Vide code", "icon": "github", "path": "https://github.com/Poxie/newest-portfolio" }
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/newest-portfolio" }
         ]
     }
 ]
