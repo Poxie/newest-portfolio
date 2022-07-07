@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { createRef } from 'react';
 import { RefObject } from 'react';
 import { usePopup } from '../../../contexts/PopupProvider';
@@ -21,7 +22,12 @@ export const AboutTimeline = () => {
     }
 
     return(
-        <div className={styles['timeline']}>
+        <motion.div 
+            className={styles['timeline']}
+            initial={{ height: 0 }}
+            animate={{ height: 'var(--dot-height)' }}
+            exit={{ height: 0 }}
+        >
             {timeline.map((time, index) => {
                 const ref = createRef<HTMLDivElement>();
                 return(
@@ -38,6 +44,6 @@ export const AboutTimeline = () => {
                 )
             })}
             <div className={styles['timeline-connector']} />
-        </div>
+        </motion.div>
     )
 }
