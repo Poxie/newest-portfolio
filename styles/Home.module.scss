@@ -457,7 +457,7 @@
     gap: 25px;
 }
 .hidden {
-    .about-tab, .about-stripe, .about-card-text h4, .about-card-text p, .about-tile {
+    .about-tab, .about-stripe, .about-card-text h4, .about-card-text p, .about-tile, .about-link {
         animation: unset !important;
         opacity: 0 !important;
     }
@@ -612,6 +612,26 @@
     }
     44%, 100% {
         width: 100%;
+    }
+}
+.about-links {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+.about-link {
+    animation: header-fade-in 1s forwards;
+    opacity: 0;
+    display: block;
+
+    svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--color-primary);
+
+        &:hover {
+            fill: var(--color-tertiary);
+        }
     }
 }
 
@@ -1308,5 +1328,9 @@
         a {
             padding: 15px 0;
         }
+    }
+    .about-links {
+        justify-content: center;
+        gap: 65px;
     }
 }

@@ -4,7 +4,7 @@ import { AboutCardType } from '../../../assets/about/types';
 import styles from '../../../styles/Home.module.scss';
 import { AboutTiles } from './AboutTiles';
 
-export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement }> = ({ title, text, tiles, footer }) => {
+export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement, extra?: ReactElement }> = ({ title, text, tiles, footer, extra }) => {
     return(
         <>
         <div className={styles['about-card']}>
@@ -15,6 +15,7 @@ export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement }> = ({
                 <p>
                     {text}
                 </p>
+                {extra}
             </div>
             <AboutTiles tiles={tiles} />
         </div>

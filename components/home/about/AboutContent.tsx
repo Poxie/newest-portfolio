@@ -4,6 +4,7 @@ import { AboutCard } from './AboutCard';
 import { AboutTabs } from './AboutTabs';
 import { AboutTimeline } from './AboutTimeline';
 import { cards } from '../../../assets/about/index.json';
+import { AboutLinks } from './AboutLinks';
 
 export const AboutContent = () => {
     const [tab, setTab] = useState(cards[0].id);
@@ -41,6 +42,7 @@ export const AboutContent = () => {
             
             <AboutCard 
                 {...activeCard}
+                extra={tab === 'who-am-i' ? <AboutLinks /> : undefined}
                 footer={tab === 'my-story' ? <AboutTimeline /> : undefined}
                 key={tab}
             />
