@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 import styles from './Button.module.scss';
 
-export default function Button({ children, style, onClick, className='', type='default' }: {
+export default function Button({ children, style, onClick, href, ariaLabel, target, className='', type='default' }: {
     children: any;
     type?: 'default' | 'hollow';
     className?: string;
     style?: React.CSSProperties;
     onClick?: () => void;
+    href?: string;
+    ariaLabel?: string;
+    target?: AnchorHTMLAttributes<''>['target']
 }) {
     className = [
         className,
         styles['container'],
         styles[type]
     ].join(' ');
-    return(
-        <button 
-            className={className}
-            style={style} 
-            onClick={onClick}
+
+    const props = {
+        className,
+        style,
+        onClick
+    }
+
+    return href ? (
+        <a 
+            href={href}
+            aria-label={ariaLabel}
+            rel={'noreferrer'}
+            target={target}
+            {...props}
         >
+            {children}
+        </a>
+    ) : (
+        <button {...props}>
             {children}
         </button>
     )
