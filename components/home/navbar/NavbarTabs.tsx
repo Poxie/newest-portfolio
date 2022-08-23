@@ -5,7 +5,7 @@ import { NavbarTab } from './NavbarTab';
 
 const SPACE_FROM_TOP = 500;
 export const NavbarTabs = () => {
-    const [tabs, setTabs] = useState<string[]>([]);
+    const [tabs, setTabs] = useState<string[]>(['Home', 'About', 'Projects', 'Technologies']);
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [mobileVisible, setMobileVisible] = useState(false);
 
@@ -13,15 +13,6 @@ export const NavbarTabs = () => {
     const closeMobile = useCallback(() => setMobileVisible(false), [setMobileVisible]);
 
     useEffect(() => {
-        // Fetching tabs based on data attributes
-        const tabs: string[] = [];
-        document.querySelectorAll('[data-section]').forEach(section => {
-            const tab = section.getAttribute('data-section');
-            if(!tab) return;
-            tabs.push(tab.slice(0,1).toUpperCase() + tab.slice(1));
-        })
-        setTabs(tabs);
-
         // Determining active tab
         const scroll = () => {
             const scroll = window.scrollY;
