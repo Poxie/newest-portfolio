@@ -5,10 +5,10 @@ import projects from '../../../assets/projects/index.json';
 
 export const ProjectTiles = () => {
     return(
-        <div className={styles['project-tiles']}>
+        <section className={styles['project-tiles']}>
             <div className={styles['project-tiles-container']}>
                 {projects.map(tile => <ProjectTile {...tile} key={tile.title} />)}
             </div>
-        </div>
+        </section>
     )
 }

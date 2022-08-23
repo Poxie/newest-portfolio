@@ -12,12 +12,12 @@ const HomeHeaderAnimation = dynamic(
 
 export const HomeHeader = () => {
     return(
-        <div className={styles['header']} data-section={'home'}>
+        <section className={styles['header']} data-section={'home'}>
             <div className={styles['header-content']}>
                 <HomeHeaderText />
                 <HomeHeaderAnimation />
             </div>
             <HomeWaveIcon />
-        </div>
+        </section>
     )
 }

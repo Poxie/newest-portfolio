@@ -29,7 +29,7 @@ export const Technologies = () => {
         hidden ? styles['hidden'] : ''
     ].join(' ');
     return(
-        <div 
+        <section 
             className={className} 
             data-section={'technologies'}
             ref={ref}
@@ -37,6 +37,6 @@ export const Technologies = () => {
             <div className={styles['technology-podiums']}>
                 {technologies.map((item, index) => <TechnologyPodium {...item} index={index} key={item.title} />)}
             </div>
-        </div>
+        </section>
     )
 }

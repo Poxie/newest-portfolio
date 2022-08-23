@@ -28,7 +28,7 @@ export const Footer = () => {
         hidden ? styles['hidden'] : ''
     ].join(' ');
     return(
-        <div className={className} ref={ref}>
+        <footer className={className} ref={ref}>
             <span>
                 Well, are you ready?
             </span>
@@ -39,6 +39,6 @@ export const Footer = () => {
             >
                 Let&apos;s do this!
             </Button>
-        </div>
+        </footer>
     )
 }

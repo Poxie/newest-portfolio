@@ -35,11 +35,11 @@ export const Navbar = () => {
         // fixed ? styles['navbar-fixed'] : ''
     ].join(' ');
     return(
-        <div className={className}>
-            <div className={styles['navbar-content']}>
+        <header className={className}>
+            <nav className={styles['navbar-content']}>
                 <NavbarTabs />
                 <NavbarButtons />
-            </div>
-        </div>
+            </nav>
+        </header>
     )
 }

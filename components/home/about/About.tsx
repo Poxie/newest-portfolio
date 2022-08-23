@@ -5,11 +5,11 @@ import { AboutContent } from './AboutContent';
 
 export const About = () => {
     return(
-        <div className={styles['about']} data-section={'about'}>
+        <section className={styles['about']} data-section={'about'}>
             <div className={styles['about-container']}>
                 <AboutContent />
             </div>
             <AboutWaveIcon />
-        </div>
+        </section>
     )
 }
