@@ -23,10 +23,8 @@ export const HomeHeaderTextMain = () => {
         styles['no-fade']
     ].join(' ');
     return(
-        <h1 className={className}>
+        <h1 className={className} aria-label={TEXT}>
             {TEXT.slice(0, letter)}
-
-            <div className={styles['pivot']}>|</div>
             {/* Hi, <span className={styles['bold']}>Albin</span> here. */}
         </h1>
     )

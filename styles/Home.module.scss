@@ -141,12 +141,21 @@
 }
 .header-main {
     display: flex;
+    position: relative;
 
-    .pivot {
-        color: var(--text-light-secondary);
+    &::after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        top: calc(50% + 5px);
+        transform: translateY(-50%);
+        height: 80%;
+        width: 4px;
+        background-color: var(--text-light-secondary);
         margin-left: 10px;
         margin-top: -2px;
         animation: pivot .6s alternate infinite ease-out;
+        border-radius: 120px;
     }
 }
 @keyframes pivot {
