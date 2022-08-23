@@ -60,12 +60,8 @@
     }
 }
 .navbar-button {
-    padding: 0 !important;
     border-radius: 120px !important;
-
-    a {
-        padding: 14px 18px;
-    }
+    padding: 14px 18px !important;
 }
 .ham {
     display: none;
@@ -849,13 +845,7 @@
 }
 .project-tile-button {
     opacity: 0;
-    padding: 0 !important;
-
-    a {
-        width: 100%;
-        height: 100%;
-        padding: 12px 18px;
-    }
+    padding: 12px 18px !important;
 }
 .project-tile-links {
     display: flex;
@@ -1092,12 +1082,8 @@
 }
 .footer-button {
     margin-top: 30px;
-    padding: 0 !important;
-
-    a {
-        padding: 17px 40px;
-        font-size: 14px;
-    }
+    padding: 14px 40px !important;
+    font-size: 14px;
 }
 
 @media (max-width: 1000px) {
