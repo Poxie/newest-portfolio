@@ -20,13 +20,13 @@ export default function Button({ children, style, onClick, href, ariaLabel, targ
     const props = {
         className,
         style,
-        onClick
+        onClick,
+        'aria-label': ariaLabel
     }
 
     return href ? (
         <a 
             href={href}
-            aria-label={ariaLabel}
             rel={'noreferrer'}
             target={target}
             {...props}
