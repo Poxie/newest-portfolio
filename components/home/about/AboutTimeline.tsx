@@ -52,6 +52,7 @@ export const AboutTimeline = () => {
                         onMouseLeave={hidePopup} 
                         className={styles['timeline-dot']}
                         style={{ animationDelay: `${index * .8 + 1.2}s` }}
+                        aria-label={`What happened on ${time.date}?`}
                         key={time.title}
                         ref={ref}
                     >
