@@ -12,10 +12,12 @@ export const ProjectTileFooter: React.FC<{
 }> = ({ links, path }) => {
     return(
         <div className={styles['project-tile-footer']}>
-            <Button className={styles['project-tile-button']}>
-                <a href={path} target="_blank" rel="noreferrer">
-                    Try it out
-                </a>
+            <Button 
+                className={styles['project-tile-button']}
+                href={path}
+                target={'_blank'}
+            >
+                Try it out
             </Button>
             <div className={styles['project-tile-links']}>
                 {links.map((link, index) => (

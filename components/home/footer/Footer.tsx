@@ -33,10 +33,11 @@ export const Footer = () => {
                 Well, are you ready?
             </span>
             
-            <Button className={styles['footer-button']}>
-                <a href={'mailto:albin.karvling@hotmail.com'}>
-                    Let&apos;s do this!
-                </a>
+            <Button 
+                href={process.env.NEXT_PUBLIC_MAIL_LINK}
+                className={styles['footer-button']}
+            >
+                Let&apos;s do this!
             </Button>
         </div>
     )

@@ -4,10 +4,11 @@ import Button from '../../button';
 
 export const NavbarButtons = () => {
     return(
-        <Button className={styles['navbar-button']}>
-            <a href="mailto:albin.karvling@hotmail.com">
-                Contact me
-            </a>
+        <Button 
+            className={styles['navbar-button']}
+            href={process.env.NEXT_PUBLIC_MAIL_LINK}
+        >
+            Contact me
         </Button>
     )
 }
