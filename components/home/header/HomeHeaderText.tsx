@@ -25,6 +25,7 @@ export const HomeHeaderText = () => {
                 type={'hollow'} 
                 style={{ "--animation-delay": '1950ms' } as CSSProperties}
                 onClick={moreAboutMe}
+                ariaLabel={'More about me'}
             >
                 <ArrowIcon />
                 More about me
