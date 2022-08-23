@@ -11,11 +11,11 @@ export const ProjectTileMain: React.FC<{
 }> = ({ title, description, path, links }) => {
     return(
         <div className={styles['project-tile-main']}>
-            <h6 className={styles['project-tile-title']}>
+            <h2 className={styles['project-tile-title']}>
                 <span>
                     {title}
                 </span>
-            </h6>
+            </h2>
             <p>
                 {description}
             </p>

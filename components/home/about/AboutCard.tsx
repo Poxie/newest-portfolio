@@ -9,9 +9,9 @@ export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement, extra?
         <>
         <div className={styles['about-card']}>
             <div className={styles['about-card-text']}>
-                <h4>
+                <h2>
                     {title}
-                </h4>
+                </h2>
                 <p>
                     {text}
                 </p>

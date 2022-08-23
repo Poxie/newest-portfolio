@@ -27,8 +27,8 @@ export const ProjectsHeader = () => {
         isHidden ? styles['hidden'] : ''
     ].join(' ');
     return(
-        <h4 className={className} ref={ref}>
+        <h2 className={className} ref={ref}>
             Projects
-        </h4>
+        </h2>
     )
 }

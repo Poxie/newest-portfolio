@@ -11,17 +11,17 @@ export const TechnologyPodium: React.FC<TechnologyType & {index: number}> = ({ t
     ].join(' ');
     return(
         <div className={className} style={{ animationDelay }}>
-            <div className={styles['technology-title']}>
+            <h2 className={styles['technology-title']}>
                 {title}
-            </div>
+            </h2>
             <div className={styles['technology-podium-content']}>
                 <span>
                     {description}
                 </span>
 
-                <div className={styles['technology-extras']}>
-                    {extras.map(extra => <div key={extra}>{extra}</div>)}
-                </div>
+                <ul className={styles['technology-extras']}>
+                    {extras.map(extra => <li key={extra}>{extra}</li>)}
+                </ul>
             </div>
         </div>
     )

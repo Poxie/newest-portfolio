@@ -58,9 +58,9 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
         >
             <div className={styles['project-card-main']}>
                 <div className={styles['project-card-header']}>
-                    <h5>
+                    <h3>
                         {title}
-                    </h5>
+                    </h3>
                     <div className={styles['project-card-links']}>
                         {links.map(link => (
                             <Tooltip content={link.title} key={link.path}>

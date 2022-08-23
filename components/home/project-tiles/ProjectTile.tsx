@@ -37,7 +37,11 @@ export const ProjectTile: React.FC<ProjectType> = ({ id, image, title, longDescr
                 links={links}
                 path={path}
             />
-            <ProjectTileImage image={image} path={path} />
+            <ProjectTileImage
+                title={title} 
+                image={image} 
+                path={path}
+            />
         </div>
     )
 }

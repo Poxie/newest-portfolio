@@ -6,9 +6,10 @@ import { CloseIcon } from '../../../assets/icons/CloseIcon';
 import { useDeviceType } from '../../../hooks/useDeviceType';
 
 export const ProjectTileImage: React.FC<{
+    title: string;
     image: string;
     path: string;
-}> = ({ image, path }) => {
+}> = ({ title, image, path }) => {
     const deviceType = useDeviceType();
     const [active, setActive] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -72,6 +73,7 @@ export const ProjectTileImage: React.FC<{
                             src={image}
                             layout={'fill'}
                             objectFit={'cover'}
+                            alt={`${title}'s preview image`}
                         />
                     </div>
                 </button>
