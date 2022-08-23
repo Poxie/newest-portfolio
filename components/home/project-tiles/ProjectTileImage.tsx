@@ -65,7 +65,7 @@ export const ProjectTileImage: React.FC<{
                 <button 
                     className={styles['project-tile-image']} 
                     onClick={showPreview}
-                    data-aria-label={`Preview site`}
+                    aria-label={`Preview site`}
                 >
                     <div className={styles['project-tile-image-container']}>
                         <Image 
