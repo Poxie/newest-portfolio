@@ -51,7 +51,7 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
     return(
         <button 
             onClick={goToTile}
-            aria-label={`Go to ${title}`}
+            aria-label={`Go to ${title} section`}
             style={{ transitionDelay: !isAnimationDone ? `${index * ITEM_DELAY}ms` : 'unset' }} 
             className={className} 
             ref={ref}
@@ -68,13 +68,19 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
                                     href={link.path} 
                                     rel="noreferrer" 
                                     target="_blank"
+                                    aria-label={`Go to ${title}'s ${link.icon}`}
                                 >
                                     {link.icon === 'github' ? <GithubIcon /> : <FigmaIcon />}
                                 </a>
                             </Tooltip>
                         ))}
                         <Tooltip content={'Go to site'}>
-                            <a href={path} rel="noreferrer" target="_blank">
+                            <a 
+                                href={path} 
+                                rel="noreferrer" 
+                                target="_blank"
+                                aria-label={`Visit ${title}`}
+                            >
                                 <ExternalLinkIcon />
                             </a>
                         </Tooltip>
