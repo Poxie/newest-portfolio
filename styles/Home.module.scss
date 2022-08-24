@@ -1161,6 +1161,10 @@
     .project-cards {
         --row-amount: 2;
     }
+    .technologies {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
     .technology-podiums {
         --row-amount: 2;
         gap: 20px;
@@ -1297,10 +1301,6 @@
     }
     .project-tile-main, .project-tile-preview, .project-image-content {
         width: 100%;
-    }
-    .technologies {
-        padding-top: 25px;
-        padding-bottom: 25px;
     }
     .project-tile-preview {
         min-width: unset !important;
