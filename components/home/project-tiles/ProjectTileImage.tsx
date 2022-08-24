@@ -63,20 +63,20 @@ export const ProjectTileImage: React.FC<{
                 }}
                 ref={imageContentRef}
             >
-                <button 
-                    className={styles['project-tile-image']} 
-                    onClick={showPreview}
-                    aria-label={`Preview site`}
-                >
-                    <div className={styles['project-tile-image-container']}>
+                <div className={styles['project-tile-image-container']}>
+                    <button 
+                        className={styles['project-tile-image']} 
+                        onClick={showPreview}
+                        aria-label={`Preview site`}
+                    >
                         <Image 
                             src={image}
                             layout={'fill'}
                             objectFit={'cover'}
                             alt={`${title}'s preview image`}
                         />
-                    </div>
-                </button>
+                    </button>
+                </div>
                 <AnimatePresence>
                     {active && (
                         <motion.div 
