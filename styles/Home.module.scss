@@ -40,14 +40,8 @@
         top: 50px;
     }
 }
-.navbar-tabs {
-    display: flex;
-}
 .navbar-tab-container {
-    list-style: none;
     display: flex;
-    padding: 0;
-    margin: 0;
 }
 .navbar-tab {
     font-size: 18px;
@@ -541,8 +535,6 @@
     display: flex;
     flex-direction: column;
     transform: perspective(200px) rotateY(-4deg);
-    list-style: none;
-    padding: 0;
 }
 .about-tile {
     font-weight: 500;
@@ -1057,8 +1049,6 @@
     color: var(--text-light-secondary);
     margin-top: 16px;
     font-size: 14px;
-    list-style: none;
-    padding: 0;
 }
 @keyframes show-podium {
     from {

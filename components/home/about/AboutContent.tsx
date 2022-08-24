@@ -31,7 +31,7 @@ export const AboutContent = () => {
 
     const activeCard = cards.find(card => card.id === tab) as typeof cards[0];
     const className = [
-        styles['about-content'],
+        styles['about-container'],
         isHidden ? styles['hidden'] : ''
     ].join(' ');
     return(

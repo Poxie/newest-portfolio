@@ -28,7 +28,7 @@ export const AboutTabs: React.FC<{
     }, [refs, activeTab]);
 
     return(
-        <div className={styles['about-tabs']}>
+        <ul className={styles['about-tabs']}>
             {tabs.map((tab, index) => {
                 const ref = React.createRef<HTMLButtonElement>();
                 tempRefs.current.push(ref);
@@ -38,19 +38,20 @@ export const AboutTabs: React.FC<{
                     tab.id === activeTab ? styles['active'] : ''
                 ].join(' ');
                 return(
-                    <button 
-                        data-tab={tab.id}
-                        className={className}
-                        style={{ animationDelay: `${index * .2}s` }}
-                        onClick={() => setActiveTab(tab.id)}
-                        key={tab.id}
-                        ref={ref}
-                    >
-                        {tab.text}
-                    </button>
+                    <li key={tab.id}>
+                        <button 
+                            data-tab={tab.id}
+                            className={className}
+                            style={{ animationDelay: `${index * .2}s` }}
+                            onClick={() => setActiveTab(tab.id)}
+                            ref={ref}
+                        >
+                            {tab.text}
+                        </button>
+                    </li>
                 )
             })}
             <div className={styles['about-stripe']} aria-hidden="true" ref={stripe} />
-        </div>
+        </ul>
     )
 }

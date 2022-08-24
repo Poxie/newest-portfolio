@@ -89,14 +89,13 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
                 </span>
             </div>
             <div className={styles['project-card-footer']}>
-                <div className={styles['project-card-tech']}>
+                <span className={styles['project-card-tech']}>
                     {techStack.join(', ')}
-                </div>
+                </span>
                 <span className={styles['project-card-date']}>
                     {date}
                 </span>
             </div>
-            
             <button 
                 aria-label={`Go to ${title} section`}
                 className={styles['project-button']}
