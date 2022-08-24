@@ -12,7 +12,7 @@ const SCROLL_FROM_TOP = 200;
 export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title, shortDescription, links, path, techStack, date, index }) => {
     const [isAnimationDone, setIsAnimationDone] = useState(false);
     const [isHidden, setIsHidden] = useState(true);
-    const ref = useRef<HTMLButtonElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
 
     // Checking if content is within threshold within viewport
     useEffect(() => {
@@ -49,9 +49,7 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
         isHidden ? styles['hidden'] : ''
     ].join(' ');
     return(
-        <button 
-            onClick={goToTile}
-            aria-label={`Go to ${title} section`}
+        <div
             style={{ transitionDelay: !isAnimationDone ? `${index * ITEM_DELAY}ms` : 'unset' }} 
             className={className} 
             ref={ref}
@@ -98,6 +96,12 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
                     {date}
                 </span>
             </div>
-        </button>
+            
+            <button 
+                aria-label={`Go to ${title} section`}
+                className={styles['project-button']}
+                onClick={goToTile}
+            />
+        </div>
     )
 }
