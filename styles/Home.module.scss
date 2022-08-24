@@ -158,6 +158,9 @@
         animation: pivot .6s alternate infinite ease-out;
         border-radius: 120px;
     }
+    &.header-hidden {
+        opacity: 0;
+    }
 }
 @keyframes pivot {
     from {
