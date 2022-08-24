@@ -43,6 +43,12 @@
 .navbar-tabs {
     display: flex;
 }
+.navbar-tab-container {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
 .navbar-tab {
     font-size: 18px;
     font-weight: 600;

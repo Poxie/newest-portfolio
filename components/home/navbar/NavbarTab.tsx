@@ -20,11 +20,13 @@ export const NavbarTab: React.FC<{
         active ? styles['active'] : ''
     ].join(' ');
     return(
-        <button 
-            className={className} 
-            onClick={scroll}
-        >
-            {text}
-        </button>
+        <li>
+            <button 
+                className={className} 
+                onClick={scroll}
+            >
+                {text}
+            </button>
+        </li>
     )
 }

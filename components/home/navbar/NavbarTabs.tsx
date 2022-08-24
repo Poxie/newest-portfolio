@@ -39,12 +39,12 @@ export const NavbarTabs = () => {
         mobileVisible ? styles['mobile-visible'] : ''
     ].join(' ');
     return(
-        <div className={styles['navbar-tabs']}>
+        <>
             <button className={styles['ham']} onClick={() => setMobileVisible(!mobileVisible)}>
                 <HamIcon />
             </button>
 
-            <div className={className}>
+            <ul className={className}>
                 {tabs.map((tab, key) => (
                     <NavbarTab 
                         text={tab} 
@@ -54,7 +54,7 @@ export const NavbarTabs = () => {
                         onClick={closeMobile}
                     />
                 ))}
-            </div>
-        </div>
+            </ul>
+        </>
     )
 }
