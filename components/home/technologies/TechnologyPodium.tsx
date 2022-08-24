@@ -19,7 +19,7 @@ export const TechnologyPodium: React.FC<TechnologyType & {index: number}> = ({ t
                     {description}
                 </span>
 
-                <ul className={styles['technology-extras']}>
+                <ul className={styles['technology-extras']} aria-label="Tech-stack">
                     {extras.map(extra => <li key={extra}>{extra}</li>)}
                 </ul>
             </div>
