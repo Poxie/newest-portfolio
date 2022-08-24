@@ -70,7 +70,7 @@ export const ProjectTileImage: React.FC<{
                         aria-label={`Preview site`}
                     >
                         <Image 
-                            src={image}
+                            src={require(`/assets/imgs/${image}.jpg`).default}
                             layout={'fill'}
                             objectFit={'cover'}
                             alt={`${title}'s preview image`}

@@ -2,7 +2,7 @@
     { 
         "id": "spotify",
         "title": "Spotify App",
-        "image": "https://i.poxgur.com/IzaWWO.png",
+        "image": "spotify-site",
         "shortDescription": "Ability to view most liked songs on spotify, search for artists and songs, and view your own statistics. All done through Spotify’s public API." ,
         "longDescription": "This is a website made using React.js and Spotify’s REST API. It allows you to view your favorite artists’ statistics and albums, and view your own favorite all-time songs! You can also explore songs similar to your taste, or to specified songs.",
         "techStack": ["React", "REST API", "Scss"],
@@ -15,7 +15,7 @@
     {
         "id": "benchmark",
         "title": "Benchmark Enhanced",
-        "image": "https://i.poxgur.com/tlAxzN.png",
+        "image": "benchmark-site",
         "shortDescription": "A website to test your cognitive abilities, including memory, reaction time of different sorts, and much more. Play games with friends to show off your knowledge of a specific game.",
         "longDescription": "This website was made using Next.js and Node.js with GraphQL as backend. The purpose of the site is to challenge your cognitive abilities, including memory, typing speed and more. You can challenge your friends and attempt a position on the leaderboard.",
         "techStack": ["Next.js", "Node.js", "GraphQL", "MySQL"],
@@ -29,7 +29,7 @@
     {
         "id": "poxen.dev",
         "title": "poxen.dev",
-        "image": "https://i.poxgur.com/NHR5sg.png",
+        "image": "dev-site",
         "shortDescription": "This website! It shows a little what I can do and who I am. It is made using Next.js, and has been designed prior to its development.",
         "longDescription": "I have done a few portfolio sites during my days, but this one is the latest and by far the greatest one. I carefully put effort into designs, and did my utterly best to make the user experience great. By the way, it is made using the lovely technology Next.js.",
         "techStack": ["Next.js", "Scss", "SVG"],
