@@ -3,8 +3,9 @@ import styles from '../../../styles/Home.module.scss';
 import { AboutCard } from './AboutCard';
 import { AboutTabs } from './AboutTabs';
 import { AboutTimeline } from './AboutTimeline';
-import { cards } from '../../../assets/about/index.json';
 import { AboutLinks } from './AboutLinks';
+import aboutJSON from '../../../assets/about/index.json';
+const cards = aboutJSON.cards;
 
 export const AboutContent = () => {
     const [tab, setTab] = useState(cards[0].id);

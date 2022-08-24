@@ -1,6 +1,7 @@
 import React, { RefObject, useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
-import { tabs } from '../../../assets/about/index.json';
+import aboutJSON from '../../../assets/about/index.json';
+const tabs = aboutJSON.tabs;
 
 export const AboutTabs: React.FC<{
     activeTab: string;

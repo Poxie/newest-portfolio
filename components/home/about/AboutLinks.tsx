@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.scss';
-import { links } from '../../../assets/about/index.json';
 import Tooltip from '../../tooltip';
 import { GithubIcon } from '../../../assets/icons/GithubIcon';
 import { MailIcon } from '../../../assets/icons/MailIcon';
 import { LinkedInIcon } from '../../../assets/icons/LinkedInIcon';
+import aboutJSON from '../../../assets/about/index.json';
+const links = aboutJSON.links;
 
 const getLinkIcon = (id: string) => {
     switch(id) {
