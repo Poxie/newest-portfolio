@@ -17,7 +17,10 @@ export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement, extra?
                 </p>
                 {extra}
             </div>
-            <AboutTiles tiles={tiles} />
+            <AboutTiles 
+                tiles={tiles} 
+                title={title} 
+            />
         </div>
         {footer}
         </>

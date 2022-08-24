@@ -49,7 +49,7 @@ export const AboutTabs: React.FC<{
                     </button>
                 )
             })}
-            <div className={styles['about-stripe']} ref={stripe} />
+            <div className={styles['about-stripe']} aria-hidden="true" ref={stripe} />
         </div>
     )
 }
