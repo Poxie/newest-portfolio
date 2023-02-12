@@ -1,15 +1,16 @@
 [
     { 
         "id": "spotify",
-        "title": "Spotify App",
+        "title": "Statify",
         "image": "spotify-site",
-        "shortDescription": "Ability to view most liked songs on spotify, search for artists and songs, and view your own statistics. All done through Spotify’s public API." ,
-        "longDescription": "This is a website made using React.js and Spotify’s REST API. It allows you to view your favorite artists’ statistics and albums, and view your own favorite all-time songs! You can also explore songs similar to your taste, or to specified songs.",
-        "techStack": ["React", "REST API", "Scss"],
-        "date": "August, 2021",
-        "path": "https://spot.poxen.dev",
+        "shortDescription": "A site allowing users to view their most liked songs, artists and genres. Search for artists and songs and get personalized song recommendations. All done through the Spotify API." ,
+        "longDescription": "This is a website made using Next.js and Spotify’s REST API. It allows you to view your favorite artists’ statistics and albums, and view your own favorite all-time songs, artists and genres! You can also explore songs similar to your taste, or to specific songs and artists.",
+        "techStack": ["Next.js", "REST API", "Scss"],
+        "date": "February, 2023",
+        "path": "https://statify.poxen.dev",
         "links": [
-            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/spotify-app" }
+            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/LTUmQvyTuo2VS59bEt29fO/spotify-team-library?node-id=471%3A2&t=scXL4ntcGKNStKUV-1" },
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/newest-spotify-app" }
         ]
     },
     {
