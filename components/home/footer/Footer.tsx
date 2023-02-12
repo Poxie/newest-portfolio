@@ -63,7 +63,11 @@ export const Footer = () => {
         hidden ? styles['hidden'] : ''
     ].join(' ');
     return(
-        <footer className={className} ref={ref}>
+        <footer 
+            className={className}
+            data-section="contact"
+            ref={ref}
+        >
             <span>
                 Well, are you ready?
             </span>

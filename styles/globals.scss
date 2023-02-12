@@ -1,11 +1,12 @@
 :root {
+  --active-color-primary: #02203c;
+  --active-color-secondary: #021221;
+  --hollow-button-hover-text: #02203c;
   --color-primary: #02203c;
   --color-secondary: #02192E;
   --color-tertiary: #021221;
   --background-primary: #fff;
   --background-secondary: #ECECEC;
-  --background-tertiary: #E0E0E0;
-  --background-quaternary: #B7B7B7;
   --tooltip-background-primary: #010c16;
   --popup-background-primary: #02192E;
   --button-background-primary: #021221;
@@ -17,6 +18,15 @@
   --border-radius-primary: 10px;
   --width-main: 1200px;
   --width-main-max: 90%;
+}
+
+[data-theme="dark"] {
+  --active-color-primary: #fff;
+  --active-color-secondary: #8d8d8d;
+  --background-primary: #2a2560;
+  --background-secondary: #242055;
+  --text-primary: #fff;
+  --text-secondary: #939393;
 }
 
 html,

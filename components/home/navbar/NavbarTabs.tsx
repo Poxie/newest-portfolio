@@ -5,7 +5,7 @@ import { NavbarTab } from './NavbarTab';
 
 const SPACE_FROM_TOP = 500;
 export const NavbarTabs = () => {
-    const [tabs, setTabs] = useState<string[]>(['Home', 'About', 'Projects', 'Technologies']);
+    const [tabs, setTabs] = useState<string[]>(['Home', 'About', 'Projects', 'Technologies', 'Contact']);
     const [activeTab, setActiveTab] = useState(tabs[0]);
     const [mobileVisible, setMobileVisible] = useState(false);
 
