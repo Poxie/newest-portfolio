@@ -1,7 +1,7 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import styles from './Button.module.scss';
 
-export default function Button({ children, style, onClick, href, ariaLabel, target, className='', type='default' }: {
+export default function Button({ children, style, onClick, href, ariaLabel, target, className='', type='default', buttonType='button', disabled=false }: {
     children: any;
     type?: 'default' | 'hollow';
     className?: string;
@@ -9,7 +9,9 @@ export default function Button({ children, style, onClick, href, ariaLabel, targ
     onClick?: () => void;
     href?: string;
     ariaLabel?: string;
-    target?: AnchorHTMLAttributes<''>['target']
+    target?: AnchorHTMLAttributes<''>['target'];
+    buttonType?: ButtonHTMLAttributes<''>['type'];
+    disabled?: boolean;
 }) {
     className = [
         className,
@@ -34,7 +36,7 @@ export default function Button({ children, style, onClick, href, ariaLabel, targ
             {children}
         </a>
     ) : (
-        <button {...props}>
+        <button {...props} type={buttonType} disabled={disabled}>
             {children}
         </button>
     )
