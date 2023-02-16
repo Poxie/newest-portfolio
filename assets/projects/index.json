@@ -14,17 +14,17 @@
         ]
     },
     {
-        "id": "benchmark",
-        "title": "Benchmark Enhanced",
-        "image": "benchmark-site",
-        "shortDescription": "A website to test your cognitive abilities, including memory, reaction time of different sorts, and much more. Play games with friends to show off your knowledge of a specific game.",
-        "longDescription": "This website was made using Next.js and Node.js with GraphQL as backend. The purpose of the site is to challenge your cognitive abilities, including memory, typing speed and more. You can challenge your friends and attempt a position on the leaderboard.",
-        "techStack": ["Next.js", "Node.js", "GraphQL", "MySQL"],
-        "date": "June, 2022",
-        "path": "https://benchmark.poxen.dev",
+        "id": "connectify",
+        "title": "Connectify",
+        "image": "connectify-site",
+        "shortDescription": "A social media platform with a great amount of features, including posts, comments, profiles, direct messages, and more. To get the full experience, simply sign up on the site.",
+        "longDescription": "A social media platform, which allows users to upload posts, comments, attachments; ability to update profile with profile pictures and banners, direct messages and much more. It was made using Next.js with Python and MySQL as backend. Socket.io was used to provide real-time messages.",
+        "techStack": ["Next.js", "Socket.io", "Python", "MySQL"],
+        "date": "November, 2022",
+        "path": "https://connectify.poxen.dev",
         "links": [
-            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/TBW7T7plKi0yWj96mh7CB9/Benchmark-team-library?node-id=0%3A1" },
-            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/benchmark" }
+            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/RMBU6s5FYHEpHNkN45f1k3/Untitled?node-id=0%3A1&t=JhYzRbQRSL9r0TEm-0" },
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/connectify" }
         ]
     },
     {
