@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     justify-content: center;
-    // position: absolute;
     position: fixed;
     width: 100%;
     top: 50px;
@@ -16,8 +15,8 @@
     color: var(--text-light-secondary);
     width: var(--width-main);
     max-width: var(--width-main-max);
-    border-radius: 120px;
-    padding: 15px 25px;
+    border-radius: var(--border-radius-primary);
+    padding: var(--spacing-secondary);
     transition: box-shadow .2s;
     box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
 }
@@ -40,19 +39,21 @@
         color: var(--text-light-primary);
     }
 }
-.navbar-button {
-    border-radius: 120px !important;
-    padding: 14px 18px !important;
-}
 .ham {
     display: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
+    border-radius: var(--border-radius-primary);
+    transition: background-color .2s;
 
     svg {
-        width: 30px;
+        width: 25px;
         fill: var(--text-light-primary);
         display: block;
+    }
+
+    &:hover {
+        background-color: var(--color-tertiary);
     }
 }
 .theme-switch {
@@ -128,7 +129,7 @@
     p {
         font-size: 21px;
         line-height: 34px;
-        margin: 40px 0;
+        margin: var(--spacing-primary) 0;
     }
 
     &>*:not(.no-fade) {
@@ -461,16 +462,11 @@
     width: var(--width-main);
     margin: 0 auto;
 }
-.about-header {
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 50px;
-}
 .about-tabs {
     position: relative;
     display: flex;
-    margin-bottom: 30px;
-    gap: 25px;
+    margin-bottom: var(--spacing-primary);
+    gap: var(--spacing-primary);
 }
 .hidden {
     .about-tab, .about-stripe, .about-card-text h2, .about-card-text p, .about-tile, .about-link {
@@ -479,7 +475,7 @@
     }
 }
 .about-tab {
-    padding: 13px 0;
+    padding: var(--spacing-secondary) 0;
     cursor: pointer;
     transition: background-color .3s, color .3s, opacity .3s;
     font-weight: 700;
@@ -510,16 +506,15 @@
     flex: 1;
     display: flex;
     justify-content: space-between;
-    gap: 35px;
-    margin-bottom: 40px;
+    gap: var(--spacing-primary);
+    margin-bottom: var(--spacing-primary);
 }
 .about-card-text {
     width: 700px;
     max-width: 100%;
 
     h2 {
-        margin-top: 0;
-        margin-bottom: 12px;
+        margin: 0;
         font-size: 28px;
         animation: header-fade-in 1s forwards;
         animation-delay: .3s;
@@ -529,10 +524,11 @@
         animation: header-fade-in 1s forwards;
         animation-delay: .5s;
         opacity: 0;
+        margin: var(--spacing-secondary) 0;
     }
 }
 .about-tiles {
-    gap: 7px;
+    gap: var(--spacing-tertiary);
     display: flex;
     flex-direction: column;
     transform: perspective(200px) rotateY(-4deg);
@@ -540,7 +536,8 @@
 .about-tile {
     font-weight: 500;
     color: var(--text-secondary);
-    padding: 12px 75px 12px 15px;
+    padding: var(--spacing-secondary);
+    padding-right: 75px;
     background-color: var(--background-secondary);
     border-radius: 8px;
     border-right: 10px solid var(--color-primary);
@@ -626,8 +623,8 @@
 }
 .about-links {
     display: flex;
-    gap: 25px;
-    margin-top: 40px;
+    gap: var(--spacing-primary);
+    margin-top: var(--spacing-primary);
 }
 .about-link {
     animation: header-fade-in 1s forwards;
@@ -662,8 +659,8 @@
 }
 .projects-header {
     font-size: 50px;
-    margin-bottom: 25px;
     margin-top: 0;
+    margin-bottom: var(--spacing-primary);
     color: var(--text-light-primary);
     transition: opacity 1s, transform 1s;
 
@@ -677,12 +674,12 @@
 
     display: grid;
     grid-template-columns: repeat(var(--row-amount), 1fr);
-    gap: 20px;
+    gap: var(--spacing-secondary);
 }
 .project-card {
     background-color: var(--color-secondary);
     border-radius: var(--border-radius-primary);
-    padding: 25px;
+    padding: var(--spacing-primary);
     transition: background-color .2s, transform 1.2s, opacity 1.2s;
     cursor: pointer;
     display: flex;
@@ -715,7 +712,7 @@
 .project-card-links {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--spacing-secondary);
     position: relative;
     z-index: 2;
 
@@ -733,7 +730,7 @@
 }
 .project-card-description {
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: var(--spacing-secondary);
     display: block;
 }
 .project-card-footer {
@@ -741,7 +738,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: var(--spacing-primary);
     font-size: 14px;
 }
 .project-button {
@@ -768,8 +765,9 @@
 }
 .project-tile {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    gap: var(--spacing-primary);
 
     &.active {
         p {
@@ -811,14 +809,11 @@
 .project-tile-main {
     width: 550px;
     max-width: 100%;
-    
-    &>* {
-        margin: 40px 0;
-        display: block;
-    }
 
     p {
         opacity: 0;
+        margin-top: var(--spacing-secondary);
+        margin-bottom: var(--spacing-primary);
     }
 }
 .project-tile-title {
@@ -872,12 +867,11 @@
 }
 .project-tile-button {
     opacity: 0;
-    padding: 12px 18px !important;
 }
 .project-tile-links {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--spacing-secondary);
 
     svg {
         display: block;
@@ -921,7 +915,8 @@
     cursor: pointer;
 }
 .project-tile-preview {
-    width: 460px;
+    --image-size: 500px;
+    width: var(--image-size);
     max-width: 100%;
     aspect-ratio: 5/3;
     position: relative;
@@ -941,7 +936,7 @@
     }
 }
 .project-image-content {
-    width: 460px;
+    width: var(--image-size);
     max-width: 100%;
     aspect-ratio: 5/3;
     z-index: 1413;
@@ -1028,11 +1023,11 @@
     }
 }
 .technology-podium-content {
-    --border-radius: 24px;
+    --border-radius: 20px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
     background-color: var(--color-primary);
     height: 100%;
-    padding: 30px;
+    padding: var(--spacing-primary);
     box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
 }
 .technology-title {
@@ -1041,16 +1036,16 @@
     font-weight: 700;
     text-align: center;
     margin-top: 0;
-    margin-bottom: 16px;
+    margin-bottom: var(--spacing-secondary);
 }
 .technology-extras {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: var(--spacing-tertiary);
     font-weight: 600;
     color: var(--text-light-secondary);
-    margin-top: 16px;
+    margin-top: var(--spacing-primary);
     font-size: 14px;
 }
 @keyframes show-podium {
@@ -1110,18 +1105,18 @@
 .contact-form {
     width: 500px;
     max-width: var(--width-main-max);
-    margin-top: 30px;
+    margin-top: var(--spacing-primary);
     display: grid;
-    gap: 10px;
+    gap: var(--spacing-secondary);
 }
 .footer-button {
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: var(--spacing-primary);
 }
 .feedback {
     font-size: 16px;
     margin: 0;
-    padding: 15px;
+    padding: var(--spacing-secondary);
     background-color: var(--color-tertiary);
     border-radius: var(--border-radius-primary);
     text-align: center;
@@ -1175,12 +1170,11 @@
         --row-amount: 2;
     }
     .technologies {
-        padding-top: 25px;
-        padding-bottom: 25px;
+        padding: var(--spacing-primary) 0;
     }
     .technology-podiums {
         --row-amount: 2;
-        gap: 20px;
+        gap: var(--spacing-primary);
     }
     .technology-podium {
         margin: 0;
@@ -1203,7 +1197,7 @@
 }
 @media (max-width: 700px) {
     .navbar {
-        top: 20px;
+        top: var(--spacing-primary);
     }
     .navbar-tab-container {
         position: fixed;
@@ -1241,13 +1235,13 @@
     .navbar-tab-container {
         flex-direction: column;
         display: flex;
-        gap: 20px;
+        gap: var(--spacing-secondary);
         padding-top: 160px;
     }
     .navbar-tab {
         font-size: 25px;
         opacity: 0;
-        transform: translateX(20px);
+        transform: translateX(var(--spacing-primary));
         transition: opacity .5s, transform .5s;
     }
     .ham {
@@ -1307,7 +1301,6 @@
     }
     .project-tile {
         flex-direction: column;
-        gap: 0;
     }
     .project-tile-main {
         order: 0 !important;
@@ -1350,7 +1343,7 @@
     .project-tile-footer {
         flex-direction: column;
         align-items: flex-start;
-        gap: 25px;
+        gap: var(--spacing-primary);
     }
     .project-tile-button {
         width: 100%;
