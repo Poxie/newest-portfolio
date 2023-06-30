@@ -24,7 +24,7 @@ export const AboutLinks = () => {
                 <Tooltip content={link.title} key={link.id}>
                     <a 
                         className={styles['about-link']}
-                        style={{ animationDelay: `${index * .23 + .7}s` }}
+                        style={{ animationDelay: `${index * .23 + 1}s` }}
                         href={link.path}
                         target="_blank"
                         rel="noreferrer"

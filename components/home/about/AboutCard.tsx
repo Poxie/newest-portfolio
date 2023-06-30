@@ -15,12 +15,12 @@ export const AboutCard: React.FC<AboutCardType & { footer?: ReactElement, extra?
                 <p>
                     {text}
                 </p>
+                <AboutTiles 
+                    tiles={tiles} 
+                    title={title} 
+                />
                 {extra}
             </div>
-            <AboutTiles 
-                tiles={tiles} 
-                title={title} 
-            />
         </div>
         {footer}
         </>

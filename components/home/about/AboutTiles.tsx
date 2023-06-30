@@ -17,6 +17,8 @@ export const AboutTiles: React.FC<{
                     key={tile}
                 >
                     {tile}
+                    <span aria-hidden="true" className={`${styles['tile-border']} ${styles['tile-border-top']}`}></span>
+                    <span aria-hidden="true" className={`${styles['tile-border']} ${styles['tile-border-bottom']}`}></span>
                 </li>
             ))}
         </ul>

@@ -510,8 +510,7 @@
     margin-bottom: var(--spacing-primary);
 }
 .about-card-text {
-    width: 700px;
-    max-width: 100%;
+    width: 100%;
 
     h2 {
         margin: 0;
@@ -524,38 +523,92 @@
         animation: header-fade-in 1s forwards;
         animation-delay: .5s;
         opacity: 0;
-        margin: var(--spacing-secondary) 0;
+        margin: var(--spacing-secondary) 0 var(--spacing-primary);
+        width: 700px;
+        max-width: 100%;
     }
 }
 .about-tiles {
-    gap: var(--spacing-tertiary);
-    display: flex;
-    flex-direction: column;
-    transform: perspective(200px) rotateY(-4deg);
+    --row-count: 4;
+    display: grid;
+    gap: calc(var(--spacing-tertiary) * 1.5);
+    grid-template-columns: repeat(var(--row-count), 1fr);
 }
 .about-tile {
+    --corner-size: 20px;
     font-weight: 500;
     color: var(--text-secondary);
-    padding: var(--spacing-secondary);
-    padding-right: 75px;
+    padding: calc(var(--spacing-secondary) * 1.5);
     background-color: var(--background-secondary);
-    border-radius: 8px;
-    border-right: 10px solid var(--color-primary);
+    border-radius: 6px;
+    border-bottom: 1-px solid var(--color-primary);
     animation: tile-in 1s forwards;
     opacity: 0;
     box-shadow: rgb(0 0 0 / 30%) 0px 1px 4px 0px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+.tile-border {
+    --corner-size: 20px;
+    border-radius: inherit;
+    position: absolute;
+    height: 100%;
+    width: var(--corner-size);
+
+    &:before, &::after {
+        content: '';
+        position: absolute;
+        background-color: var(--color-primary);
+    }
+    &::after {
+        height: 100%;
+        width: var(--corner-size);
+        background-color: var(--background-secondary);
+    } 
+    &:before {
+        width: var(--corner-size);
+        height: var(--corner-size);
+    }
+
+    &.tile-border-top {
+        left: 0;
+        top: 0;
+
+        &:before {
+            top: 0;
+            left: 0;
+            border-top-left-radius: inherit;
+        }
+        &::after {
+            top: 1.5px;
+            left: 1.5px;
+            border-top-left-radius: inherit;
+        }
+    }
+    &.tile-border-bottom {
+        bottom: 0;
+        right: 0;
+
+        &:before {
+            bottom: 0;
+            right: 0;
+            border-bottom-right-radius: inherit;
+        }
+        &::after {
+            bottom: 1.5px;
+            right: 1.5px;
+            border-bottom-right-radius: inherit;
+        }
+    }
 }
 @keyframes tile-in {
-    0% {
-        transform: translateX(100px);
+    from {
+        transform: translateY(50px);
         opacity: 0;
     }
-    50% {
-        transform: translateX(-25px);
-        opacity: 1;
-    }
-    95%, 100% {
-        transform: translateX(0);
+    to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -1276,6 +1329,7 @@
         flex-direction: column;
     }
     .about-tiles {
+        --row-count: 2;
         transform: none;
     }
     @keyframes tile-in {
@@ -1352,6 +1406,9 @@
         a {
             padding: 15px 0;
         }
+    }
+    .about-tiles {
+        --row-count: 1;
     }
     .about-links {
         justify-content: center;
