@@ -4,7 +4,7 @@
         { "id": "my-story", "text": "My story" }
     ],
     "cards": [
-        { "title": "Who am I?", "text": "My name is Albin Kärvling and I am 19 years old. I just finished high school where I studied natural sciences. Despite my studies, I have been spending a lot of my free time coding websites. My curiousity is endless and I love expanding my knowledge. Some of my projects can be found below.", "id": "who-am-i", "tiles": ["19 years old", "A full-stack developer", "Self-taught", "In love with React"] },
+        { "title": "Who am I?", "text": "My name is Albin Kärvling and I am 19 years old. I just finished high school where I studied natural sciences. Despite my studies, I have been spending a lot of my free time coding websites. My curiosity is endless and I love expanding my knowledge. Some of my projects can be found below.", "id": "who-am-i", "tiles": ["19 years old", "A full-stack developer", "Self-taught", "In love with React"] },
         { "title": "My story", "text": "My story began in the early days of 2017 when a friend of mine introduced me to programming. I was hesitant at first, but quickly picked it up. I started enjoying programming and its challenges more and more, and started expanding my knowledge into the back-end and design world.", "id": "my-story", "tiles": ["First day in 2017", "Quickly picked up frontend", "Grew to love React", "Began my backend journey", "Discovered design tools"] }
     ],
     "links": [
