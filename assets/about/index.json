@@ -9,7 +9,7 @@
     ],
     "links": [
         { "id": "github", "title": "Github profile", "path": "https://github.com/Poxie" },
-        { "id": "mail", "title": "Contect me", "path": "mailto:albin.karvling@hotmail.com" },
+        { "id": "mail", "title": "Contact me", "path": "mailto:albin.karvling@hotmail.com" },
         { "id": "linkedin", "title": "Connect on LinkedIn", "path": "https://www.linkedin.com/in/albin-k%C3%A4rvling-237a851a8/" }
     ]
 }
