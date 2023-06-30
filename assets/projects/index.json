@@ -1,4 +1,18 @@
 [
+    {
+        "id": "onixo",
+        "title": "Onixo",
+        "image": "onixo-site",
+        "shortDescription": "A site displaying the usage of the discord bot Onixo. It has an interactive dashboard where all the settings can be updated right on the site.",
+        "longDescription": "This is a site which displays general information about the discord bot Onixo. It also allows its users to interact with the bot's settings directly on the site. Meaning, there is a backend for the site which handles get and update requests. Consistent admin checks are also sent to the bot with websockets to ensure user authorization.",
+        "techStack": ["Next.js", "Socket.io", "Python", "MongoDB"],
+        "date": "July, 2023",
+        "path": "https://beta.onixo.xyz",
+        "links": [
+            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/eh8BWbTzABIbKouSecClcH/Untitled?type=design&node-id=0%3A1&mode=design&t=LYAKhKXFDNUxzcdN-1" },
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/onixo-new" }
+        ]
+    },
     { 
         "id": "spotify",
         "title": "Statify",
