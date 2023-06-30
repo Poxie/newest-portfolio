@@ -1,30 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
+import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 
 export const ProjectsHeader = () => {
-    const [isHidden, setIsHidden] = useState(true);
     const ref = useRef<HTMLHeadingElement>(null);
 
-    // Checking if content is within threshold within viewport
-    useEffect(() => {
-        const scroll = () => {
-            if(!ref.current) return;
-            const fromTop = ref.current.getBoundingClientRect().top;
-            const percent = fromTop / window.innerHeight;
-            
-            if(percent < .8) {
-                setIsHidden(false);
-            }
-        }
-        scroll();
-
-        window.addEventListener('scroll', scroll);
-        return () => window.removeEventListener('scroll', scroll);
-    }, []);
+    const { isVisible } = useScrollIntoView(ref);
 
     const className = [
         styles['projects-header'],
-        isHidden ? styles['hidden'] : ''
+        !isVisible ? styles['hidden'] : ''
     ].join(' ');
     return(
         <h2 className={className} ref={ref}>

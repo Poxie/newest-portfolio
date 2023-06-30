@@ -5,34 +5,20 @@ import { AboutTabs } from './AboutTabs';
 import { AboutTimeline } from './AboutTimeline';
 import { AboutLinks } from './AboutLinks';
 import aboutJSON from '../../../assets/about/index.json';
+import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 const cards = aboutJSON.cards;
 
 export const AboutContent = () => {
     const [tab, setTab] = useState(cards[0].id);
-    const [isHidden, setIsHidden] = useState(true);
+
     const ref = useRef<HTMLHeadingElement>(null);
 
-    // Checking if content is within threshold within viewport
-    useEffect(() => {
-        const scroll = () => {
-            if(!ref.current) return;
-            const fromTop = ref.current.getBoundingClientRect().top;
-            const percent = fromTop / window.innerHeight;
-            
-            if(percent < .7) {
-                setIsHidden(false);
-            }
-        }
-        scroll();
-
-        window.addEventListener('scroll', scroll);
-        return () => window.removeEventListener('scroll', scroll);
-    }, []);
+    const { isVisible } = useScrollIntoView(ref);
 
     const activeCard = cards.find(card => card.id === tab) as typeof cards[0];
     const className = [
         styles['about-container'],
-        isHidden ? styles['hidden'] : ''
+        !isVisible ? styles['hidden'] : ''
     ].join(' ');
     return(
         <div className={className} ref={ref}>

@@ -2,32 +2,18 @@ import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import Button from '../../button';
 import { Input } from '../../input';
+import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 
 export const Footer = () => {
-    const [hidden, setHidden] = useState(true);
     const [loading, setLoading] = useState(false);
     const [feedback, setFeedback] = useState('');
+
     const ref = useRef<HTMLDivElement>(null);
     const name = useRef<HTMLInputElement>(null);
     const email = useRef<HTMLInputElement>(null);
     const message = useRef<HTMLInputElement>(null);
 
-    // Checking if content is within threshold within viewport
-    useEffect(() => {
-        const scroll = () => {
-            if(!ref.current) return;
-            const fromTop = ref.current.getBoundingClientRect().top;
-            const percent = fromTop / window.innerHeight;
-            
-            if(percent < .76) {
-                setHidden(false);
-            }
-        }
-        scroll();
-
-        window.addEventListener('scroll', scroll);
-        return () => window.removeEventListener('scroll', scroll);
-    }, []);
+    const { isVisible } = useScrollIntoView(ref);
 
     // Sending message
     const sendMessage = async (e: FormEvent) => {
@@ -60,7 +46,7 @@ export const Footer = () => {
 
     const className = [
         styles['footer'],
-        hidden ? styles['hidden'] : ''
+        !isVisible ? styles['hidden'] : ''
     ].join(' ');
     return(
         <footer 

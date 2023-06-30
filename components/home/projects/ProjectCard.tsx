@@ -5,32 +5,17 @@ import { GithubIcon } from '../../../assets/icons/GithubIcon';
 import { ProjectLinkType, ProjectType } from '../../../assets/projects/types';
 import styles from '../../../styles/Home.module.scss';
 import Tooltip from '../../tooltip';
+import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 
 const ITEM_DELAY = 100;
 const ITEM_DURATION = 1200;
 const SCROLL_FROM_TOP = 200;
 export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title, shortDescription, links, path, techStack, date, index }) => {
-    const [isAnimationDone, setIsAnimationDone] = useState(false);
-    const [isHidden, setIsHidden] = useState(true);
     const ref = useRef<HTMLDivElement>(null);
 
-    // Checking if content is within threshold within viewport
-    useEffect(() => {
-        const scroll = () => {
-            if(!ref.current) return;
-            const fromTop = ref.current.getBoundingClientRect().top;
-            const percent = fromTop / window.innerHeight;
-            
-            if(percent < .8) {
-                setIsHidden(false);
-                setTimeout(() => setIsAnimationDone(true), ITEM_DURATION + ITEM_DELAY * index);
-            }
-        }
-        scroll();
-
-        window.addEventListener('scroll', scroll);
-        return () => window.removeEventListener('scroll', scroll);
-    }, []);
+    const { isAnimationDone, isVisible } =  useScrollIntoView(ref, {
+        animationDuration: ITEM_DURATION + ITEM_DELAY * index
+    });
 
     // Function to scroll to project tile
     const goToTile = useCallback((e: React.MouseEvent) => {
@@ -46,7 +31,7 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
     
     const className = [
         styles['project-card'],
-        isHidden ? styles['hidden'] : ''
+        !isVisible ? styles['hidden'] : ''
     ].join(' ');
     return(
         <div

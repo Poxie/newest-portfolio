@@ -2,31 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { TechnologyPodium } from './TechnologyPodium';
 import technologies from '../../../assets/technologies/index.json';
+import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 
 export const Technologies = () => {
-    const [hidden, setHidden] = useState(true);
     const ref = useRef<HTMLDivElement>(null);
 
-    // Checking if content is within threshold within viewport
-    useEffect(() => {
-        const scroll = () => {
-            if(!ref.current) return;
-            const fromTop = ref.current.getBoundingClientRect().top;
-            const percent = fromTop / window.innerHeight;
-            
-            if(percent < .5) {
-                setHidden(false);
-            }
-        }
-        scroll();
-
-        window.addEventListener('scroll', scroll);
-        return () => window.removeEventListener('scroll', scroll);
-    }, []);
+    const { isVisible } = useScrollIntoView(ref);
     
     const className = [
         styles['technologies'],
-        hidden ? styles['hidden'] : ''
+        !isVisible ? styles['hidden'] : ''
     ].join(' ');
     return(
         <section 
