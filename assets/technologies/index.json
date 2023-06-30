@@ -2,7 +2,7 @@
     { 
         "title": "Python", 
         "description": "I have done some Python throughout my journey, but I prefer other technologies.", 
-        "extras": ["Flask", "MySQL", "FastAPI"] 
+        "extras": ["Flask", "MySQL", "MongoDB", "FastAPI"] 
     },
     { 
         "title": "Node.js", 
@@ -12,7 +12,7 @@
     { 
         "title": "JavaScript", 
         "description": "The language I started with and fell in love with almost immediately.", 
-        "extras": ["JSX", "Next.js", "React.js", "TypeScript"] 
+        "extras": ["JSX", "Next.js", "React.js", "Redux", "TypeScript"] 
     },
     { 
         "title": "CSS", 
