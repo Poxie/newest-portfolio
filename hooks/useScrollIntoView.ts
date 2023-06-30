@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useState } from "react";
 
-export const useScrollIntoView = (ref: RefObject<HTMLDivElement>, options: {
+export const useScrollIntoView = (ref: RefObject<HTMLDivElement>, options?: {
     animationDuration: number;
 }) => {
     const [isVisible, setIsVisible] = useState(false);
@@ -15,14 +15,17 @@ export const useScrollIntoView = (ref: RefObject<HTMLDivElement>, options: {
             
             if(percent < .8) {
                 setIsVisible(true);
-                setTimeout(() => setIsAnimationDone(true), options.animationDuration);
+                
+                if(options?.animationDuration) {
+                    setTimeout(() => setIsAnimationDone(true), options.animationDuration);
+                }
             }
         }
         scroll();
 
         window.addEventListener('scroll', scroll);
         return () => window.removeEventListener('scroll', scroll);
-    }, [options.animationDuration]);
+    }, [options?.animationDuration]);
 
     return { isAnimationDone, isVisible };
 }
