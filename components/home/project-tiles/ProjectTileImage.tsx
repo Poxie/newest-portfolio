@@ -4,15 +4,20 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CloseIcon } from '../../../assets/icons/CloseIcon';
 import { useDeviceType } from '../../../hooks/useDeviceType';
+import Button from '../../button';
 
 export const ProjectTileImage: React.FC<{
     title: string;
     image: string;
     path: string;
-}> = ({ title, image, path }) => {
+    index: number;
+}> = ({ title, image, path, index }) => {
     const deviceType = useDeviceType();
+
     const [active, setActive] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+    const [hasNotice, setHasNotice] = useState(false);
+
     const ref = useRef<HTMLDivElement>(null);
     const imageContentRef = useRef<HTMLDivElement>(null);
 
@@ -33,6 +38,22 @@ export const ProjectTileImage: React.FC<{
             window.removeEventListener('scroll', updatePosition);
         }
     }, [active]);
+
+    const closeNotice = () => {
+        localStorage.setItem('preview_notice', 'false');
+        setHasNotice(false);
+    }
+    useEffect(() => {
+        if(index > 0) return;
+        if(localStorage.getItem('preview_notice') === 'false') return;
+
+        if(active) {
+            closeNotice();
+        } else {
+            setHasNotice(true);
+        }
+    }, [index, active]);
+
     const showPreview = () => {
         setActive(true);
         document.body.style.overflow = 'hidden';
@@ -55,6 +76,24 @@ export const ProjectTileImage: React.FC<{
     return(
         <>
         <div className={className} ref={ref}>
+            {hasNotice && (
+                <div className={styles['project-notice']}>
+                    <span>
+                        Preview site
+                    </span>
+                    <span>
+                        Click on the preview image to preview the site right here!
+                    </span>
+                    <div className={styles['notice-button']}>
+                        <Button 
+                            type={'hollow'}
+                            onClick={closeNotice}
+                        >
+                            Alright!
+                        </Button>
+                    </div>
+                </div>
+            )}
             <div
                 className={styles['project-image-content']}
                 style={{ 

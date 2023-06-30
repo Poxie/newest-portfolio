@@ -7,7 +7,13 @@ export const ProjectTiles = () => {
     return(
         <section className={styles['project-tiles']}>
             <div className={styles['project-tiles-container']}>
-                {projects.map(tile => <ProjectTile {...tile} key={tile.title} />)}
+                {projects.map((tile, key) => (
+                    <ProjectTile 
+                        {...tile} 
+                        index={key}
+                        key={tile.title} 
+                    />
+                ))}
             </div>
         </section>
     )

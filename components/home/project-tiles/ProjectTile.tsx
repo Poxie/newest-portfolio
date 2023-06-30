@@ -4,7 +4,9 @@ import { ProjectTileMain } from './ProjectTileMain';
 import { ProjectTileImage } from './ProjectTileImage';
 import { ProjectType } from '../../../assets/projects/types';
 
-export const ProjectTile: React.FC<ProjectType> = ({ id, image, title, longDescription, links, path }) => {
+export const ProjectTile: React.FC<ProjectType & {
+    index: number;
+}> = ({ id, image, title, longDescription, links, path, index }) => {
     const [active, setActive] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -38,6 +40,7 @@ export const ProjectTile: React.FC<ProjectType> = ({ id, image, title, longDescr
                 path={path}
             />
             <ProjectTileImage
+                index={index}
                 title={title} 
                 image={image} 
                 path={path}
