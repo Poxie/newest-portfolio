@@ -1445,6 +1445,11 @@
     .header-animation {
         margin-bottom: 180px;
     }
+    .project-card-footer {
+        gap: var(--spacing-tertiary);
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
     .project-tile-title {
         font-size: 28px;
     }
