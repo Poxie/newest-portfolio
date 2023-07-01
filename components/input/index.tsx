@@ -44,7 +44,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(({ focusOnMo
         onFocus: onFocus,
         onBlur: onBlur,
         name,
-        id: name,
+        id: label?.toLowerCase(),
         required: true,
         ref: inputRef
     }
@@ -69,7 +69,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(({ focusOnMo
                 />
             )}
             {label && (
-                <label htmlFor={name}>
+                <label htmlFor={label.toLowerCase()}>
                     {label}
                 </label>
             )}
