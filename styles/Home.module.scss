@@ -602,6 +602,13 @@
         }
     }
 }
+[data-theme='dark'] {
+    .tile-border {
+        &::before {
+            background-color: var(--color-secondary);
+        }
+    }
+}
 @keyframes tile-in {
     from {
         transform: translateY(50px);
