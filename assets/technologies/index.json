@@ -12,7 +12,7 @@
     { 
         "title": "JavaScript", 
         "description": "The language I started with and fell in love with almost immediately.", 
-        "extras": ["JSX", "Next.js", "React.js", "Redux", "TypeScript"] 
+        "extras": ["JSX", "Next.js", "React.js", "Redux", "TypeScript", "React Native"] 
     },
     { 
         "title": "CSS", 
