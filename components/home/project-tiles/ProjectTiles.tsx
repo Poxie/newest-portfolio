@@ -14,7 +14,7 @@ export const ProjectTiles = () => {
                             {...tile} 
                             index={key}
                         />
-                        {!tile['is-dev'] && projects[key + 1]['is-dev'] && (
+                        {!tile.dev && projects[key + 1].dev && (
                             <ProjectDevleopmentHeader />
                         )}
                     </React.Fragment>

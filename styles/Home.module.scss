@@ -814,10 +814,24 @@
     align-items: center;
     
     h3 {
-        font-size: 22px;
+        font-size: 20px;
         margin: 0;
         font-weight: 600;
     }
+}
+.card-header-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-secondary);
+    position: relative;
+    z-index: 2;
+}
+.card-header-chip {
+    background-color: var(--color-primary);
+    padding: calc(var(--spacing-tertiary) / 2) var(--spacing-secondary);
+    border-radius: var(--border-radius-primary);
+    font-size: 14px;
+    font-weight: 700;
 }
 .project-card-links {
     display: flex;

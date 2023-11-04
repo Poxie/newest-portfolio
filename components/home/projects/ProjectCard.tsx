@@ -10,7 +10,7 @@ import { useScrollIntoView } from '../../../hooks/useScrollIntoView';
 const ITEM_DELAY = 100;
 const ITEM_DURATION = 1200;
 const SCROLL_FROM_TOP = 200;
-export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title, shortDescription, links, path, techStack, date, index }) => {
+export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title, shortDescription, links, path, techStack, date, dev, index }) => {
     const ref = useRef<HTMLDivElement>(null);
 
     const { isAnimationDone, isVisible } =  useScrollIntoView(ref, {
@@ -41,9 +41,21 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
         >
             <div className={styles['project-card-main']}>
                 <div className={styles['project-card-header']}>
-                    <h3>
-                        {title}
-                    </h3>
+                    <div className={styles['card-header-text']}>
+                        <h3>
+                            {title}
+                        </h3>
+                        {dev && (
+                            <Tooltip 
+                                content={'Currently in development'} 
+                                key={'dev'}
+                            >
+                                <div className={styles['card-header-chip']}>
+                                    Dev
+                                </div>
+                            </Tooltip>
+                        )}
+                    </div>
                     <div className={styles['project-card-links']}>
                         {links.map(link => (
                             <Tooltip content={link.title} key={link.path}>
