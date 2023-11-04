@@ -8,11 +8,19 @@ export const ProjectTiles = () => {
         <section className={styles['project-tiles']}>
             <div className={styles['project-tiles-container']}>
                 {projects.map((tile, key) => (
-                    <ProjectTile 
-                        {...tile} 
-                        index={key}
-                        key={tile.title} 
-                    />
+                    <React.Fragment key={tile.title}>
+                        <ProjectTile 
+                            {...tile} 
+                            index={key}
+                        />
+                        {!tile['is-dev'] && projects[key + 1]['is-dev'] && (
+                            <div className={styles['dev-projects']}>
+                                <span>
+                                    In development
+                                </span>
+                            </div>
+                        )}
+                    </React.Fragment>
                 ))}
             </div>
         </section>
