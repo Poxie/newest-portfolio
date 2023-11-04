@@ -6,7 +6,7 @@ import { ProjectTileFooter } from './ProjectTileFooter';
 export const ProjectTileMain: React.FC<{
     title: string;
     description: string;
-    path: string;
+    path: string | undefined;
     links: ProjectLinkType[];
 }> = ({ title, description, path, links }) => {
     return(

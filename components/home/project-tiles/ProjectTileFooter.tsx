@@ -8,17 +8,19 @@ import Tooltip from '../../tooltip';
 
 export const ProjectTileFooter: React.FC<{
     links: ProjectLinkType[];
-    path: string;
+    path: string | undefined;
 }> = ({ links, path }) => {
     return(
         <div className={styles['project-tile-footer']}>
-            <Button 
-                className={styles['project-tile-button']}
-                href={path}
-                target={'_blank'}
-            >
-                Try it out
-            </Button>
+            {path && (
+                <Button 
+                    className={styles['project-tile-button']}
+                    href={path}
+                    target={'_blank'}
+                >
+                    Try it out
+                </Button>
+            )}
             <div className={styles['project-tile-links']}>
                 {links.map((link, index) => (
                     <Tooltip content={link.title} key={link.title}>

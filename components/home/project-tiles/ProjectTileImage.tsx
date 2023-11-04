@@ -9,8 +9,8 @@ import Button from '../../button';
 export const ProjectTileImage: React.FC<{
     title: string;
     image: string;
-    path: string;
     index: number;
+    path: string | undefined;
 }> = ({ title, image, path, index }) => {
     const deviceType = useDeviceType();
 
@@ -23,6 +23,8 @@ export const ProjectTileImage: React.FC<{
 
     // Always updating initial position
     useEffect(() => {
+        if(!path) return;
+
         const updatePosition = () => {
             if(!ref.current || !imageContentRef.current || active) return;
             const { top, left } = ref.current.getBoundingClientRect();
@@ -37,7 +39,7 @@ export const ProjectTileImage: React.FC<{
             window.removeEventListener('resize', updatePosition);
             window.removeEventListener('scroll', updatePosition);
         }
-    }, [active]);
+    }, [path, active]);
 
     const closeNotice = () => {
         localStorage.setItem('preview_notice', 'false');
@@ -104,9 +106,10 @@ export const ProjectTileImage: React.FC<{
             >
                 <div className={styles['project-tile-image-container']}>
                     <button 
-                        className={styles['project-tile-image']} 
+                        className={styles['project-tile-image']}
                         onClick={showPreview}
                         aria-label={`Preview site`}
+                        disabled={!path}
                     >
                         <Image 
                             src={require(`/assets/imgs/${image}.jpg`).default}
