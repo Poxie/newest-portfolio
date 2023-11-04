@@ -59,12 +59,13 @@
         "id": "vocbulary-app",
         "title": "Vocabulary app",
         "image": "vocabulary-app",
-        "shortDescription": "A mobile app meant to create, edit and store terms & definitions. Import, export and get quizzed on your Vocabulary.",
-        "longDescription": "A mobile app meant to create, edit and store terms & definitions. Import, export and get quizzed on your Vocabulary.",
+        "shortDescription": "A mobile app meant to create, edit and store terms & definitions. Import, export and get quizzed on your vocabulary.",
+        "longDescription": "A mobile app meant to create, edit and store terms & definitions. Import, export and get quizzed on your vocabulary. Made using React Native to be compatible with both android and iOS.",
         "techStack": ["React Native, Firebase"],
         "date": "September 14th, 2023-",
         "links": [
-            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/uNVikZxJWzfcEA1cNaq5B6/Untitled?type=design&node-id=0%3A1&mode=design&t=6tI9zzfNhulMFyOG-1" }
+            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/uNVikZxJWzfcEA1cNaq5B6/Untitled?type=design&node-id=0%3A1&mode=design&t=6tI9zzfNhulMFyOG-1" },
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/translation-app-v2" }
         ],
         "dev": true
     }

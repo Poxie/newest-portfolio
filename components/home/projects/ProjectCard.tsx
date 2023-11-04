@@ -50,7 +50,10 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
                                 content={'Currently in development'} 
                                 key={'dev'}
                             >
-                                <div className={styles['card-header-chip']}>
+                                <div 
+                                    className={styles['card-header-chip']}
+                                    onClick={goToTile}
+                                >
                                     Dev
                                 </div>
                             </Tooltip>
@@ -69,16 +72,18 @@ export const ProjectCard: React.FC<ProjectType & {index: number}> = ({ id, title
                                 </a>
                             </Tooltip>
                         ))}
-                        <Tooltip content={'Go to site'}>
-                            <a 
-                                href={path} 
-                                rel="noreferrer" 
-                                target="_blank"
-                                aria-label={`Visit ${title}`}
-                            >
-                                <ExternalLinkIcon />
-                            </a>
-                        </Tooltip>
+                        {path && (
+                            <Tooltip content={'Go to site'}>
+                                <a 
+                                    href={path} 
+                                    rel="noreferrer" 
+                                    target="_blank"
+                                    aria-label={`Visit ${title}`}
+                                >
+                                    <ExternalLinkIcon />
+                                </a>
+                            </Tooltip>
+                        )}
                     </div>
                 </div>
                 <span className={styles['project-card-description']}>
