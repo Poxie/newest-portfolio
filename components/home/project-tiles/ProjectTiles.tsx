@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../../styles/Home.module.scss';
 import { ProjectTile } from './ProjectTile';
 import projects from '../../../assets/projects/index.json';
+import { ProjectDevleopmentHeader } from './ProjectDevelopmentHeader';
 
 export const ProjectTiles = () => {
     return(
@@ -14,11 +15,7 @@ export const ProjectTiles = () => {
                             index={key}
                         />
                         {!tile['is-dev'] && projects[key + 1]['is-dev'] && (
-                            <div className={styles['dev-projects']}>
-                                <span>
-                                    In development
-                                </span>
-                            </div>
+                            <ProjectDevleopmentHeader />
                         )}
                     </React.Fragment>
                 ))}

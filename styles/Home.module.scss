@@ -887,6 +887,12 @@ body[data-theme="dark"] {
     display: flex;
     position: relative;
     margin: calc(-1 * var(--spacing-primary) * 2) 0;
+    transition: opacity .5s;
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+    }
 
     span {
         background-color: var(--background-secondary);
