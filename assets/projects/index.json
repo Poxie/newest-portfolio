@@ -16,8 +16,8 @@
     { 
         "id": "spotify",
         "title": "Statify",
-        "image": "spotify-site",
-        "shortDescription": "A site allowing users to view their most liked songs, artists and genres. Search for artists and songs and get personalized song recommendations. All done through the Spotify API." ,
+        "image": "statify",
+        "shortDescription": "View your personal stats, such as artists, songs and genres, or explore the worlds' taste. Get song recommendations based on artists, songs or genres." ,
         "longDescription": "This is a website made using Next.js and Spotify’s REST API. It allows you to view your favorite artists’ statistics and albums, and view your own favorite all-time songs, artists and genres! You can also explore songs similar to your taste, or to specific songs and artists.",
         "techStack": ["Next.js", "REST API", "Scss"],
         "date": "February, 2023",
@@ -56,7 +56,7 @@
         ]
     },
     {
-        "id": "vocbulary-app",
+        "id": "vocabulary-app",
         "title": "Vocabulary app",
         "image": "vocabulary-app",
         "shortDescription": "A mobile app meant to create, edit and store terms & definitions. Import, export and get quizzed on your vocabulary.",
