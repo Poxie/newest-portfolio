@@ -24,7 +24,7 @@
         "path": "https://statify.poxen.dev",
         "links": [
             { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/LTUmQvyTuo2VS59bEt29fO/spotify-team-library?node-id=471%3A2&t=scXL4ntcGKNStKUV-1" },
-            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/newest-spotify-app" }
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/statify" }
         ]
     },
     {
