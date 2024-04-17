@@ -5,7 +5,7 @@
         "image": "statify",
         "shortDescription": "View your personal stats, such as artists, songs and genres, or explore the worlds' taste. Get song recommendations based on artists, songs or genres." ,
         "longDescription": "This is a website made using Next.js and Spotify’s REST API. It allows you to view your favorite artists’ statistics and albums, and view your own favorite all-time songs, artists and genres! You can also explore songs similar to your taste, or to specific songs and artists.",
-        "techStack": ["Next.js", "REST API", "TailwindCSS"],
+        "techStack": ["Next.js", "Redux", "REST API", "TailwindCSS"],
         "date": "September, 2023",
         "path": "https://statify.poxen.dev",
         "links": [
