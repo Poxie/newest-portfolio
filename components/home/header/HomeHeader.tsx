@@ -6,7 +6,7 @@ import { HomeHeaderText } from './HomeHeaderText';
 
 // Making sure animation is only visible to client users
 const HomeHeaderAnimation = dynamic(
-    () => import('./HomeHeaderAnimation').then(res => res.HomeHeaderAnimation),
+    () => import('./HomeHeaderAnimation').then(res => res.HomeHeaderAnimation) as any,
     { ssr: false }
 );
 

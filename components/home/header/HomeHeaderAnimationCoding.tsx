@@ -111,3 +111,4 @@ export const HomeHeaderAnimationCoding: React.FC<{
         </div>
     )
 });
+HomeHeaderAnimationCoding.displayName = 'HomeHeaderAnimationCoding';
