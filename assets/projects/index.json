@@ -14,6 +14,20 @@
         ]
     },
     {
+        "id": "medito",
+        "title": "Medito",
+        "image": "medito",
+        "shortDescription": "A donation page for the medito foundation. This website was made to help the foundation raise money for their cause, and has been accepted by them.",
+        "longDescription": "This is a donation page for medito foundation. It uses stripe to collect donations, and current exchange rates to show the donation amount in different currencies.",
+        "techStack": ["Next.js", "Stripe", "TailwindCSS"],
+        "date": "January, 2024",
+        "path": "https://medito.poxen.dev",
+        "links": [
+            { "title": "View design", "icon": "figma", "path": "https://www.figma.com/file/XJLLyttYk2sUvSMcYEgj01/Medito?type=design&node-id=0-1&mode=design&t=f8M2qg26HdjG2cgQ-0" },
+            { "title": "View code", "icon": "github", "path": "https://github.com/Poxie/medito" }
+        ]
+    },
+    {
         "id": "onixo",
         "title": "Onixo",
         "image": "onixo-site",
