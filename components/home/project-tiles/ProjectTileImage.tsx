@@ -112,7 +112,7 @@ export const ProjectTileImage: React.FC<{
                         disabled={!path}
                     >
                         <Image 
-                            src={require(`/assets/imgs/${image}.jpg`).default}
+                            src={`/imgs/${image}.jpg`}
                             layout={'fill'}
                             objectFit={'cover'}
                             alt={`${title}'s preview image`}
